@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://d4hn6uii757sm"]
+
+[ext_resource type="Script" path="res://GameManager.gd" id="1_h0ert"]
+[ext_resource type="Resource" uid="uid://csjtggds2tnkg" path="res://Items/BlueOrb.tres" id="2_o3d2y"]
+[ext_resource type="PackedScene" uid="uid://dsyutym4unj7t" path="res://Prefabs/Player/Player.tscn" id="3_b1ltu"]
+[ext_resource type="Resource" uid="uid://j8dwsf7ijmfp" path="res://Items/GreenOrb.tres" id="3_dvelm"]
+[ext_resource type="Script" path="res://Score.gd" id="3_ip5n4"]
+[ext_resource type="Resource" uid="uid://6vua8jbhjxqx" path="res://Items/RedOrb.tres" id="4_5hdy2"]
+
+[node name="GameManager" type="Node2D"]
+script = ExtResource("1_h0ert")
+items = Array[Resource("res://Items/FallableItem.gd")]([ExtResource("2_o3d2y"), ExtResource("3_dvelm"), ExtResource("4_5hdy2")])
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="Player" parent="." instance=ExtResource("3_b1ltu")]
+position = Vector2(340, 599)
+scale = Vector2(2, 2)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(50, 100)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 849.0
+offset_top = 8.0
+offset_right = 1149.0
+offset_bottom = 108.0
+grow_horizontal = 0
+theme_override_font_sizes/normal_font_size = 50
+text = "Score: 3000"
+script = ExtResource("3_ip5n4")
+
+[connection signal="timeout" from="Timer" to="." method="spawn_item"]

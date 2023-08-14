@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FallableItem" load_steps=4 format=3 uid="uid://6vua8jbhjxqx"]
+
+[ext_resource type="Script" path="res://Items/FallableItem.gd" id="1_6qlxy"]
+[ext_resource type="AudioStream" uid="uid://dsnml31eosaf3" path="res://lose6.ogg" id="1_j57ds"]
+[ext_resource type="Texture2D" uid="uid://c1clo6k4aioye" path="res://Prefabs/FallingItem/baditem.png" id="2_sy538"]
+
+[resource]
+script = ExtResource("1_6qlxy")
+name = "Red Orb"
+sprite = ExtResource("2_sy538")
+collect_sound = ExtResource("1_j57ds")
+score_effect = 1
