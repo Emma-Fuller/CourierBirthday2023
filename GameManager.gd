@@ -11,10 +11,14 @@ func spawn_item():
 
 	add_child(new_item)
 	
+@export var do_filter = false
 func get_random_item_data() -> FallableItem:
-	return items[randi() % items.size()]
+	var list = items.filter(is_positive) if do_filter else items
+	return list[randi() % list.size()]
 	
 func get_random_window_x() -> int:
 	var window_size = get_viewport_rect().size
 	return randi_range(0, window_size.x)
 	
+func is_positive(item: FallableItem) -> bool:
+	return item.score_effect == FallableItem.ItemType.PositiveScore
