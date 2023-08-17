@@ -13,9 +13,10 @@ func refresh_item_data():
 	$AudioStreamPlayer2D.stream = item_data.collect_sound
 
 func _ready():
+	rotation = randf_range(0, 2 * PI)
 	if randi() % 2:
 		rotate_scale = -1
-	
+
 	refresh_item_data()
 	
 func _physics_process(delta):
