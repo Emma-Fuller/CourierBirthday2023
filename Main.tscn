@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d4hn6uii757sm"]
+[gd_scene load_steps=15 format=3 uid="uid://d4hn6uii757sm"]
 
 [ext_resource type="Script" path="res://GameManager.gd" id="1_h0ert"]
 [ext_resource type="AudioStream" uid="uid://co8xlal3wksom" path="res://Sounds/BadSound.ogg" id="2_1adup"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c1aclyxdruew4" path="res://Sprites/Broken_Heart.png" id="8_mu8e5"]
 [ext_resource type="Texture2D" uid="uid://cwncik42ogb6j" path="res://Sprites/Background.png" id="8_qegxo"]
 [ext_resource type="Texture2D" uid="uid://3ckad8dci3xg" path="res://Sprites/Bomb.png" id="9_u68ry"]
+[ext_resource type="AudioStream" uid="uid://bj7tl8p802aa6" path="res://Sounds/Swinging Pants.ogg" id="11_pkieq"]
 
 [sub_resource type="Resource" id="Resource_onshv"]
 script = ExtResource("3_ubptw")
@@ -64,5 +65,10 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "Score: 3000"
 script = ExtResource("3_ip5n4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_pkieq")
+volume_db = -16.2
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="spawn_item"]
