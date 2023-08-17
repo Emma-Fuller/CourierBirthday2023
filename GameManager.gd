@@ -20,5 +20,5 @@ func get_random_window_x() -> int:
 	var window_size = get_viewport_rect().size
 	return randi_range(0, window_size.x)
 	
-func is_positive(item: FallableItem) -> bool:
-	return item.score_effect == FallableItem.ItemType.PositiveScore
+func is_positive(i: FallableItem) -> bool:
+	return i.score_effect == FallableItem.ItemType.PositiveScore

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbxcvntp7gyfw"
-path="res://.godot/imported/gooditem.png-a950e44a3f4a21bf83b0117cecd3ac37.ctex"
+uid="uid://bnrjpra021fd4"
+path="res://.godot/imported/powerupitem.png-b5b40dee7c5ade6e9d898e7930544a1f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Prefabs/FallingItem/gooditem.png"
-dest_files=["res://.godot/imported/gooditem.png-a950e44a3f4a21bf83b0117cecd3ac37.ctex"]
+source_file="res://Sprites/powerupitem.png"
+dest_files=["res://.godot/imported/powerupitem.png-b5b40dee7c5ade6e9d898e7930544a1f.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnrjpra021fd4"
-path="res://.godot/imported/powerupitem.png-089b036496ccf9fa3f33a23758e1f5ee.ctex"
+uid="uid://bi80s0ld6whu0"
+path="res://.godot/imported/Ellie_Neutral.png-b104cc05015d48bb9a3858b7b55f0a03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Prefabs/FallingItem/powerupitem.png"
-dest_files=["res://.godot/imported/powerupitem.png-089b036496ccf9fa3f33a23758e1f5ee.ctex"]
+source_file="res://Sprites/Ellie_Neutral.png"
+dest_files=["res://.godot/imported/Ellie_Neutral.png-b104cc05015d48bb9a3858b7b55f0a03.ctex"]
 
 [params]
 

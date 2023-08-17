@@ -16,8 +16,8 @@ wait_time = 0.3
 autostart = true
 
 [node name="Player" parent="." instance=ExtResource("3_b1ltu")]
-position = Vector2(340, 599)
-scale = Vector2(2, 2)
+position = Vector2(111, 615)
+scale = Vector2(-0.25, 0.25)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(50, 100)

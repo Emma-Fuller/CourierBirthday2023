@@ -18,7 +18,7 @@ func _physics_process(delta):
 	position.y += delta * speed
 	speed += acc * delta
 
-func on_pickup(area):
+func on_pickup(_area):
 	$AudioStreamPlayer2D.play()
 	match item_data.score_effect:
 		FallableItem.ItemType.PositiveScore:
