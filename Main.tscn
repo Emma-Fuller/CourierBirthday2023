@@ -1,18 +1,39 @@
-[gd_scene load_steps=7 format=3 uid="uid://d4hn6uii757sm"]
+[gd_scene load_steps=11 format=3 uid="uid://d4hn6uii757sm"]
 
 [ext_resource type="Script" path="res://GameManager.gd" id="1_h0ert"]
-[ext_resource type="Resource" uid="uid://csjtggds2tnkg" path="res://Items/BlueOrb.tres" id="2_o3d2y"]
 [ext_resource type="PackedScene" uid="uid://dsyutym4unj7t" path="res://Prefabs/Player/Player.tscn" id="3_b1ltu"]
-[ext_resource type="Resource" uid="uid://j8dwsf7ijmfp" path="res://Items/GreenOrb.tres" id="3_dvelm"]
 [ext_resource type="Script" path="res://Score.gd" id="3_ip5n4"]
-[ext_resource type="Resource" uid="uid://6vua8jbhjxqx" path="res://Items/RedOrb.tres" id="4_5hdy2"]
+[ext_resource type="Script" path="res://Items/FallableItem.gd" id="3_ubptw"]
+[ext_resource type="AudioStream" uid="uid://dsnml31eosaf3" path="res://Sounds/lose6.ogg" id="7_mty5g"]
+[ext_resource type="Texture2D" uid="uid://c1aclyxdruew4" path="res://Sprites/Broken_Heart.png" id="8_mu8e5"]
+[ext_resource type="Texture2D" uid="uid://cwncik42ogb6j" path="res://Sprites/Background.png" id="8_qegxo"]
+[ext_resource type="Texture2D" uid="uid://3ckad8dci3xg" path="res://Sprites/Bomb.png" id="9_u68ry"]
+
+[sub_resource type="Resource" id="Resource_onshv"]
+script = ExtResource("3_ubptw")
+name = "Broken Heart"
+sprite = ExtResource("8_mu8e5")
+collect_sound = ExtResource("7_mty5g")
+score_effect = 1
+
+[sub_resource type="Resource" id="Resource_em3wl"]
+script = ExtResource("3_ubptw")
+name = "Bomb"
+sprite = ExtResource("9_u68ry")
+collect_sound = ExtResource("7_mty5g")
+score_effect = 1
 
 [node name="GameManager" type="Node2D"]
 script = ExtResource("1_h0ert")
-items = Array[Resource("res://Items/FallableItem.gd")]([ExtResource("2_o3d2y"), ExtResource("3_dvelm"), ExtResource("4_5hdy2")])
+items = Array[ExtResource("3_ubptw")]([SubResource("Resource_onshv"), SubResource("Resource_em3wl")])
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(595, 355)
+scale = Vector2(1.31672, 1.31672)
+texture = ExtResource("8_qegxo")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.75
 autostart = true
 
 [node name="Player" parent="." instance=ExtResource("3_b1ltu")]
@@ -29,6 +50,7 @@ offset_top = 8.0
 offset_right = 1149.0
 offset_bottom = 108.0
 grow_horizontal = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "Score: 3000"
 script = ExtResource("3_ip5n4")
