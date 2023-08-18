@@ -2,7 +2,13 @@ extends Node2D
 
 @export var drop_margin = 200
 var item = preload("res://Prefabs/FallingItem/FallingItem.tscn")
-@export var pool: ItemPool
+var pool: ItemPool
+
+var defaultPool := preload("res://Items/DefaultItemPool.tres")
+var pewPewPowerPool := preload("res://Items/PewPewPowerPool.tres")
+
+func _ready():
+	pool = defaultPool
 
 func spawn_item():
 	var new_item = item.instantiate() as FallingItem
@@ -28,4 +34,16 @@ func on_game_ended():
 	)
 
 	queue_free()
+	
+func item_got(item_name: String):
+	if item_name == "PewPew":
+		pool = pewPewPowerPool
+		
+		var air: Array = get_tree().get_nodes_in_group("items")
+		for old_item in air:
+				old_item.item_data = pool.pick_random()
+				old_item.refresh_item_data()
+		
+		await get_tree().create_timer(5).timeout
+		pool = defaultPool
 	

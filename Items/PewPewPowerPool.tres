@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ItemPool" load_steps=3 format=3 uid="uid://cjvaeofahstai"]
+
+[ext_resource type="Script" path="res://Items/ItemPool.gd" id="1_goeu3"]
+[ext_resource type="Resource" uid="uid://ba7rrnf8s2hmw" path="res://Items/Sandwich.tres" id="1_xpsd5"]
+
+[resource]
+script = ExtResource("1_goeu3")
+items = Array[Resource("res://Items/FallableItem.gd")]([ExtResource("1_xpsd5")])

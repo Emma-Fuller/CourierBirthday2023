@@ -28,13 +28,17 @@ func _physics_process(delta):
 func on_pickup(_area):
 	$AudioStreamPlayer2D.play()
 	ScoreManager.score += item_data.score_value
-	call_deferred("destroy_deferred")
+	destroy_deferred.call_deferred()
+	
+	var spawnmanager = get_parent()
+	spawnmanager.item_got(item_data.name)
 
 func destroy_deferred():
 	destroying = true
 	$Sprite2D.visible = false
 	$Area2D/CollisionShape2D.disabled = true
 	await $AudioStreamPlayer2D.finished
+	
 	queue_free()
 
 func _on_visible_on_screen_notifier_2d_screen_exited():

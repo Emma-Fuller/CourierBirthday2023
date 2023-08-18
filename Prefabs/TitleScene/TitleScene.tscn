@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0atnlhuqsvft"]
+[gd_scene load_steps=8 format=3 uid="uid://c0atnlhuqsvft"]
 
 [ext_resource type="Script" path="res://Prefabs/TitleScene/TitleScene.gd" id="1_1brqf"]
 [ext_resource type="Texture2D" uid="uid://cwncik42ogb6j" path="res://Sprites/Background.png" id="1_km3e3"]
 [ext_resource type="Theme" uid="uid://b2vnrnnylbxce" path="res://GameTheme.tres" id="2_4k8q1"]
 [ext_resource type="Script" path="res://GameManager.gd" id="3_u4xqv"]
-[ext_resource type="Resource" uid="uid://j5ws4nsewjjb" path="res://Items/DefaultItemPool.tres" id="4_hk8gx"]
 [ext_resource type="Texture2D" uid="uid://b8gubxi6w0g6y" path="res://Sprites/SANDWICH.png" id="5_mw3w6"]
 [ext_resource type="Texture2D" uid="uid://3ckad8dci3xg" path="res://Sprites/Bomb.png" id="6_648qr"]
 [ext_resource type="Texture2D" uid="uid://c1aclyxdruew4" path="res://Sprites/Broken_Heart.png" id="7_dgrs7"]
@@ -21,7 +20,6 @@ texture = ExtResource("1_km3e3")
 modulate = Color(1, 1, 1, 0.462745)
 script = ExtResource("3_u4xqv")
 drop_margin = 50
-pool = ExtResource("4_hk8gx")
 
 [node name="Timer" type="Timer" parent="FallingItems"]
 wait_time = 0.75
