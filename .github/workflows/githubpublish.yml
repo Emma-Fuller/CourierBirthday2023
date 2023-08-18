@@ -27,4 +27,4 @@ jobs:
     - name: test if game is there
       run: |
         echo "Hello world!!"
-        ls
+        ls ../EXPORT
