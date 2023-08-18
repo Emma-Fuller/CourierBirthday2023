@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4hn6uii757sm"]
+[gd_scene load_steps=10 format=3 uid="uid://d4hn6uii757sm"]
 
 [ext_resource type="Script" path="res://GameManager.gd" id="1_h0ert"]
+[ext_resource type="Resource" uid="uid://j5ws4nsewjjb" path="res://Items/DefaultItemPool.tres" id="2_m6klp"]
 [ext_resource type="PackedScene" uid="uid://dsyutym4unj7t" path="res://Prefabs/Player/Player.tscn" id="3_b1ltu"]
 [ext_resource type="Script" path="res://Score.gd" id="3_ip5n4"]
 [ext_resource type="Texture2D" uid="uid://cwncik42ogb6j" path="res://Sprites/Background.png" id="8_qegxo"]
@@ -12,6 +13,7 @@
 [node name="GameManager" type="Node2D"]
 script = ExtResource("1_h0ert")
 drop_margin = 100
+pool = ExtResource("2_m6klp")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(595, 355)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1acm7p7k8nuf"]
+[gd_scene load_steps=7 format=3 uid="uid://b1acm7p7k8nuf"]
 
 [ext_resource type="Script" path="res://Prefabs/TitleScene/TitleScene.gd" id="1_wte15"]
 [ext_resource type="Texture2D" uid="uid://cwncik42ogb6j" path="res://Sprites/Background.png" id="2_qnsxq"]
 [ext_resource type="Script" path="res://GameManager.gd" id="3_jfnkd"]
+[ext_resource type="Resource" uid="uid://j5ws4nsewjjb" path="res://Items/DefaultItemPool.tres" id="4_wvvaa"]
 [ext_resource type="Theme" uid="uid://b2vnrnnylbxce" path="res://GameTheme.tres" id="8_7ej1e"]
 [ext_resource type="Script" path="res://Prefabs/EndCard/FinalScore.gd" id="9_mm1ey"]
 
@@ -18,6 +19,7 @@ texture = ExtResource("2_qnsxq")
 modulate = Color(1, 1, 1, 0.462745)
 script = ExtResource("3_jfnkd")
 drop_margin = 50
+pool = ExtResource("4_wvvaa")
 
 [node name="Timer" type="Timer" parent="FallingItems"]
 wait_time = 0.75
