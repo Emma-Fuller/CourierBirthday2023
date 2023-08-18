@@ -32,3 +32,5 @@ jobs:
         chmod +x butler
         ./butler push ${{ steps.export.outputs.archive_directory }} \
           tealberrygaming/smellie-ellies-catch-em-all:EXPORT
+      env:
+        BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
