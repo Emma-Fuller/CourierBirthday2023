@@ -1,45 +1,17 @@
-[gd_scene load_steps=18 format=3 uid="uid://d4hn6uii757sm"]
+[gd_scene load_steps=9 format=3 uid="uid://d4hn6uii757sm"]
 
 [ext_resource type="Script" path="res://GameManager.gd" id="1_h0ert"]
-[ext_resource type="AudioStream" uid="uid://co8xlal3wksom" path="res://Sounds/BadSound.ogg" id="2_1adup"]
 [ext_resource type="PackedScene" uid="uid://dsyutym4unj7t" path="res://Prefabs/Player/Player.tscn" id="3_b1ltu"]
 [ext_resource type="Script" path="res://Score.gd" id="3_ip5n4"]
-[ext_resource type="Script" path="res://Items/FallableItem.gd" id="3_ubptw"]
-[ext_resource type="AudioStream" uid="uid://cbrxnjljq3mrb" path="res://Sounds/GoodSound.ogg" id="6_7tvqq"]
-[ext_resource type="Texture2D" uid="uid://b8gubxi6w0g6y" path="res://Sprites/SANDWICH.png" id="7_mojob"]
-[ext_resource type="Texture2D" uid="uid://c1aclyxdruew4" path="res://Sprites/Broken_Heart.png" id="8_mu8e5"]
 [ext_resource type="Texture2D" uid="uid://cwncik42ogb6j" path="res://Sprites/Background.png" id="8_qegxo"]
-[ext_resource type="Texture2D" uid="uid://3ckad8dci3xg" path="res://Sprites/Bomb.png" id="9_u68ry"]
 [ext_resource type="Texture2D" uid="uid://bjwk8yl73ft0c" path="res://Sprites/panel_woodPaperWear.png" id="11_nyinj"]
 [ext_resource type="AudioStream" uid="uid://bj7tl8p802aa6" path="res://Sounds/Swinging Pants.ogg" id="11_pkieq"]
 [ext_resource type="Theme" uid="uid://b2vnrnnylbxce" path="res://GameTheme.tres" id="12_to6u8"]
 [ext_resource type="Script" path="res://TimeLeft.gd" id="14_w33aa"]
 
-[sub_resource type="Resource" id="Resource_onshv"]
-script = ExtResource("3_ubptw")
-name = "Broken Heart"
-sprite = ExtResource("8_mu8e5")
-collect_sound = ExtResource("2_1adup")
-score_effect = 1
-
-[sub_resource type="Resource" id="Resource_em3wl"]
-script = ExtResource("3_ubptw")
-name = "Bomb"
-sprite = ExtResource("9_u68ry")
-collect_sound = ExtResource("2_1adup")
-score_effect = 1
-
-[sub_resource type="Resource" id="Resource_cknfj"]
-script = ExtResource("3_ubptw")
-name = "SAMMY"
-sprite = ExtResource("7_mojob")
-collect_sound = ExtResource("6_7tvqq")
-score_effect = 0
-
 [node name="GameManager" type="Node2D"]
 script = ExtResource("1_h0ert")
 drop_margin = 100
-items = Array[ExtResource("3_ubptw")]([SubResource("Resource_onshv"), SubResource("Resource_em3wl"), SubResource("Resource_cknfj")])
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(595, 355)

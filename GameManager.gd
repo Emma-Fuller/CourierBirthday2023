@@ -2,7 +2,7 @@ extends Node2D
 
 @export var drop_margin = 200
 var item = preload("res://Prefabs/FallingItem/FallingItem.tscn")
-@export var items: Array[FallableItem]
+@export var pool: ItemPool
 
 func spawn_item():
 	var new_item = item.instantiate() as FallingItem
@@ -15,15 +15,14 @@ func spawn_item():
 	
 @export var do_filter = false
 func get_random_item_data() -> FallableItem:
-	var list = items.filter(is_positive) if do_filter else items
-	return list[randi() % list.size()]
+	return pool.items[randi() % pool.items.size()]
 	
 func get_random_window_x() -> int:
 	var window_size = get_viewport_rect().size
 	return randi_range(0 + drop_margin, window_size.x - drop_margin)
 	
 func is_positive(i: FallableItem) -> bool:
-	return i.score_effect == FallableItem.ItemType.PositiveScore
+	return i.score_value > 0
 
 func on_game_ended():
 	$Timer.stop()

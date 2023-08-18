@@ -27,11 +27,7 @@ func _physics_process(delta):
 
 func on_pickup(_area):
 	$AudioStreamPlayer2D.play()
-	match item_data.score_effect:
-		FallableItem.ItemType.PositiveScore:
-			ScoreManager.score += 50
-		FallableItem.ItemType.NegativeScore:
-			ScoreManager.score -= 50
+	ScoreManager.score += item_data.score_value
 	call_deferred("destroy_deferred")
 
 func destroy_deferred():
