@@ -5,7 +5,6 @@ var item = preload("res://Prefabs/FallingItem/FallingItem.tscn")
 @export var items: Array[FallableItem]
 
 func spawn_item():
-	print("BLEHHHHH")
 	var new_item = item.instantiate() as FallingItem
 
 	new_item.position.x = get_random_window_x()

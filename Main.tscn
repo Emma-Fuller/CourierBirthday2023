@@ -81,15 +81,11 @@ patch_margin_bottom = 10
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer"]
+[node name="RichTextLabel" type="Label" parent="CenterContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 layout_mode = 2
 theme = ExtResource("12_to6u8")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 80
 text = "Score: 2000"
-fit_content = true
-autowrap_mode = 0
 script = ExtResource("3_ip5n4")
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
