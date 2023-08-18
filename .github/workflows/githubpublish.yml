@@ -30,7 +30,8 @@ jobs:
         curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
         unzip butler.zip
         chmod +x butler
-        ./butler push ${{ steps.export.outputs.archive_directory }} \
+        ./butler push \
+          ${{ steps.export.outputs.archive_directory }}/Web.zip \
           tealberrygaming/smellie-ellies-catch-em-all:EXPORT
       env:
         BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
