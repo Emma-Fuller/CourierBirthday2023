@@ -25,7 +25,10 @@ jobs:
         archive_output: true
         cache: true
 
-    - name: test if game is there
+    - name: publish to itch
       run: |
-        echo "Hello world!!"
-        ls ${{ steps.export.outputs.archive_directory }}
+        curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+        unzip butler.zip
+        chmod +x butler
+        ./butler push ${{ steps.export.outputs.archive_directory }} \
+          tealberrygaming/smellie-ellies-catch-em-all:EXPORT
