@@ -1,0 +1,13 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://b0tdbanmvyuod"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jae5v"]
+load_path = "res://.godot/imported/panel_woodPaperWear.png-43e86bcc6bca41ea7725a6438a4b0b7c.ctex"
+
+[resource]
+texture = SubResource("CompressedTexture2D_jae5v")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0

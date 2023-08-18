@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d4hn6uii757sm"]
+[gd_scene load_steps=18 format=3 uid="uid://d4hn6uii757sm"]
 
 [ext_resource type="Script" path="res://GameManager.gd" id="1_h0ert"]
 [ext_resource type="AudioStream" uid="uid://co8xlal3wksom" path="res://Sounds/BadSound.ogg" id="2_1adup"]
@@ -10,7 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://c1aclyxdruew4" path="res://Sprites/Broken_Heart.png" id="8_mu8e5"]
 [ext_resource type="Texture2D" uid="uid://cwncik42ogb6j" path="res://Sprites/Background.png" id="8_qegxo"]
 [ext_resource type="Texture2D" uid="uid://3ckad8dci3xg" path="res://Sprites/Bomb.png" id="9_u68ry"]
+[ext_resource type="Texture2D" uid="uid://bjwk8yl73ft0c" path="res://Sprites/panel_woodPaperWear.png" id="11_nyinj"]
 [ext_resource type="AudioStream" uid="uid://bj7tl8p802aa6" path="res://Sounds/Swinging Pants.ogg" id="11_pkieq"]
+[ext_resource type="Theme" uid="uid://b2vnrnnylbxce" path="res://GameTheme.tres" id="12_to6u8"]
+[ext_resource type="Script" path="res://TimeLeft.gd" id="14_w33aa"]
 
 [sub_resource type="Resource" id="Resource_onshv"]
 script = ExtResource("3_ubptw")
@@ -51,24 +54,80 @@ autostart = true
 position = Vector2(111, 615)
 scale = Vector2(-0.25, 0.25)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-custom_minimum_size = Vector2(50, 100)
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 849.0
-offset_top = 8.0
-offset_right = 1149.0
-offset_bottom = 108.0
-grow_horizontal = 0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 50
-text = "Score: 3000"
-script = ExtResource("3_ip5n4")
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(151, 52)
 stream = ExtResource("11_pkieq")
 volume_db = -16.2
 autoplay = true
 
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_left = 956.0
+offset_top = -11.0
+offset_right = 1356.0
+offset_bottom = 139.0
+scale = Vector2(0.6, 0.6)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer"]
+texture_filter = 1
+texture_repeat = 2
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+texture = ExtResource("11_nyinj")
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+layout_mode = 2
+theme = ExtResource("12_to6u8")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 80
+text = "Score: 2000"
+fit_content = true
+autowrap_mode = 0
+script = ExtResource("3_ip5n4")
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+offset_left = 956.0
+offset_top = 53.0
+offset_right = 1356.0
+offset_bottom = 203.0
+scale = Vector2(0.6, 0.6)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer2"]
+texture_filter = 1
+texture_repeat = 2
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+texture = ExtResource("11_nyinj")
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer2"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+layout_mode = 2
+theme = ExtResource("12_to6u8")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 70
+text = "Time Left: 60"
+fit_content = true
+autowrap_mode = 0
+script = ExtResource("14_w33aa")
+initial_time = 10
+
+[node name="Timer" type="Timer" parent="CenterContainer2/RichTextLabel"]
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="spawn_item"]
+[connection signal="game_ended" from="CenterContainer2/RichTextLabel" to="." method="on_game_ended"]
+[connection signal="timeout" from="CenterContainer2/RichTextLabel/Timer" to="CenterContainer2/RichTextLabel" method="tick_down"]
