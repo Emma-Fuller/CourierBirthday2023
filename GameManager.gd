@@ -41,8 +41,9 @@ func item_got(item_name: String):
 			
 			var air: Array = get_tree().get_nodes_in_group("items")
 			for old_item in air:
-				old_item.item_data = pool.pick_random()
-				old_item.refresh_item_data()
+				if old_item.item_data.name != "PewPew":
+					old_item.item_data = pool.pick_random()
+					old_item.refresh_item_data()
 			
 			await get_tree().create_timer(5).timeout
 			pool = defaultPool

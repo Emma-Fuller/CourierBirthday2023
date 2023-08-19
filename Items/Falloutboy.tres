@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FallableItem" load_steps=4 format=3 uid="uid://dhaf7ww20robc"]
+
+[ext_resource type="AudioStream" uid="uid://cbrxnjljq3mrb" path="res://Sounds/GoodSound.ogg" id="1_cfraf"]
+[ext_resource type="Script" path="res://Items/FallableItem.gd" id="1_xwo4v"]
+[ext_resource type="Texture2D" uid="uid://drwfa448r8dqe" path="res://Sprites/FalloutBoy.png" id="3_cncfi"]
+
+[resource]
+script = ExtResource("1_xwo4v")
+name = "Fallout Boy"
+sprite = ExtResource("3_cncfi")
+collect_sound = ExtResource("1_cfraf")
+score_value = 50
