@@ -7,6 +7,6 @@
 [resource]
 script = ExtResource("1_d1h3g")
 name = "PewPew"
+score_value = 10
 sprite = ExtResource("3_p122v")
 collect_sound = ExtResource("1_4c70x")
-score_value = 0

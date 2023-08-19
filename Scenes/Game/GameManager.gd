@@ -27,7 +27,7 @@ func get_random_window_x() -> int:
 
 func on_game_ended():
 	$"Spawn Timer".stop()
-	await get_tree().create_timer(2).timeout	
+	await get_tree().create_timer(3).timeout
 	get_window().add_child.call_deferred(
 		load("res://Scenes/EndCard/EndCard.tscn").instantiate()
 	)
@@ -37,6 +37,8 @@ func on_game_ended():
 func item_got(item_name: String):
 	match item_name:
 		"PewPew":
+			var old_wait_time = $"Spawn Timer".wait_time
+			$"Spawn Timer".wait_time = 0.25
 			pool = pewPewPowerPool
 
 			for old_item in get_tree().get_nodes_in_group("items"):
@@ -45,6 +47,7 @@ func item_got(item_name: String):
 					old_item.refresh_item_data()
 			
 			await get_tree().create_timer(5).timeout
+			$"Spawn Timer".wait_time = old_wait_time
 			pool = defaultPool
 		"Tealberry":
 			magnet_active = true

@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4hn6uii757sm"]
+[gd_scene load_steps=8 format=3 uid="uid://d4hn6uii757sm"]
 
 [ext_resource type="Script" path="res://Scenes/Game/GameManager.gd" id="1_vb2og"]
 [ext_resource type="Texture2D" uid="uid://cwncik42ogb6j" path="res://Sprites/Background.png" id="2_0ypyp"]
 [ext_resource type="PackedScene" uid="uid://dsyutym4unj7t" path="res://Scenes/Player/Player.tscn" id="3_83y36"]
-[ext_resource type="AudioStream" uid="uid://bj7tl8p802aa6" path="res://Sounds/BackgroundMusic.ogg" id="4_62kdv"]
 [ext_resource type="Texture2D" uid="uid://bjwk8yl73ft0c" path="res://Sprites/UIPanel.png" id="5_hxn6h"]
 [ext_resource type="Theme" uid="uid://b2vnrnnylbxce" path="res://Theme/GameTheme.tres" id="6_a15il"]
 [ext_resource type="Script" path="res://Scenes/Game/Score.gd" id="7_w7mif"]
@@ -24,12 +23,6 @@ autostart = true
 [node name="Player" parent="." groups=["player"] instance=ExtResource("3_83y36")]
 position = Vector2(634, 619)
 scale = Vector2(-0.25, 0.25)
-
-[node name="Background Music" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(151, 52)
-stream = ExtResource("4_62kdv")
-volume_db = -16.2
-autoplay = true
 
 [node name="Score Area" type="CenterContainer" parent="."]
 offset_left = 956.0
