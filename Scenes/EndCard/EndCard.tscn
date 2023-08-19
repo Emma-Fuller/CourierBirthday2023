@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1acm7p7k8nuf"]
+[gd_scene load_steps=7 format=3 uid="uid://b1acm7p7k8nuf"]
 
 [ext_resource type="Script" path="res://Scenes/TitleScene/TitleScene.gd" id="1_mggf6"]
 [ext_resource type="Texture2D" uid="uid://cwncik42ogb6j" path="res://Sprites/Background.png" id="2_kajcx"]
 [ext_resource type="Script" path="res://Scenes/Game/GameManager.gd" id="3_dbhe2"]
 [ext_resource type="Theme" uid="uid://b2vnrnnylbxce" path="res://Theme/GameTheme.tres" id="4_8xb1c"]
 [ext_resource type="Script" path="res://Scenes/EndCard/FinalScore.gd" id="5_5f2h6"]
+[ext_resource type="Script" path="res://Scenes/EndCard/HighScoreText.gd" id="6_8rn7w"]
 
 [node name="End Card" type="Node2D"]
 script = ExtResource("1_mggf6")
@@ -57,6 +58,14 @@ layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("4_8xb1c")
 text = "QUIT"
+
+[node name="High Score Text" type="Label" parent="UI Area/Vertical Layout"]
+layout_mode = 2
+theme = ExtResource("4_8xb1c")
+theme_override_font_sizes/font_size = 35
+text = "High score: 0"
+horizontal_alignment = 1
+script = ExtResource("6_8rn7w")
 
 [connection signal="timeout" from="Falling Items/Spawn Timer" to="Falling Items" method="spawn_item"]
 [connection signal="pressed" from="UI Area/Vertical Layout/Replay Button" to="." method="_on_play_button_pressed"]

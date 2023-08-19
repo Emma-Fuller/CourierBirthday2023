@@ -1,6 +1,4 @@
 extends Label
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _ready():
 	text = "Final Score: %d" % ScoreManager.score
-
