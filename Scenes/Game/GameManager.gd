@@ -40,8 +40,7 @@ func item_got(item_name: String):
 			pool = pewPewPowerPool
 
 			for old_item in get_tree().get_nodes_in_group("items"):
-				if old_item.item_data.name != "PewPew" \
-					and not pool.contains(old_item.item_data):
+				if not pool.contains(old_item.item_data):
 					old_item.item_data = pool.pick_random()
 					old_item.refresh_item_data()
 			
@@ -49,6 +48,7 @@ func item_got(item_name: String):
 			pool = defaultPool
 		"Tealberry":
 			magnet_active = true
+
 			await get_tree().create_timer(5).timeout
 			magnet_active = false
 	

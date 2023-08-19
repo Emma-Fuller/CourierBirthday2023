@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="ItemPool" load_steps=5 format=3 uid="uid://cjvaeofahstai"]
+[gd_resource type="Resource" script_class="ItemPool" load_steps=7 format=3 uid="uid://cjvaeofahstai"]
 
 [ext_resource type="Script" path="res://Resources/ItemPool.gd" id="1_goeu3"]
 [ext_resource type="Resource" uid="uid://ba7rrnf8s2hmw" path="res://Resources/Items/Sandwich.tres" id="1_xpsd5"]
 [ext_resource type="Resource" uid="uid://b6m2f1tg23x6s" path="res://Resources/Items/Minty.tres" id="2_2ud80"]
 [ext_resource type="Resource" uid="uid://dhaf7ww20robc" path="res://Resources/Items/Falloutboy.tres" id="3_udxml"]
+[ext_resource type="Resource" uid="uid://cxpe1qwfauvww" path="res://Resources/Items/PewPew.tres" id="4_wjt03"]
+[ext_resource type="Resource" uid="uid://5ug53ap6rv45" path="res://Resources/Items/Tealberry.tres" id="5_ujlco"]
 
 [resource]
 script = ExtResource("1_goeu3")
-items = Array[Resource("res://Resources/FallableItem.gd")]([ExtResource("1_xpsd5"), ExtResource("2_2ud80"), ExtResource("3_udxml")])
+items = Array[Resource("res://Resources/FallableItem.gd")]([ExtResource("1_xpsd5"), ExtResource("1_xpsd5"), ExtResource("2_2ud80"), ExtResource("2_2ud80"), ExtResource("3_udxml"), ExtResource("3_udxml"), ExtResource("4_wjt03"), ExtResource("5_ujlco")])
