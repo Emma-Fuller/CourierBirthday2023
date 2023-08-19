@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Prefabs/TitleScene/TitleScene.gd" id="1_1brqf"]
 [ext_resource type="Texture2D" uid="uid://cwncik42ogb6j" path="res://Sprites/Background.png" id="1_km3e3"]
-[ext_resource type="Theme" uid="uid://b2vnrnnylbxce" path="res://GameTheme.tres" id="2_4k8q1"]
-[ext_resource type="Script" path="res://GameManager.gd" id="3_u4xqv"]
+[ext_resource type="Script" path="res://Prefabs/Game/GameManager.gd" id="3_xt4sd"]
+[ext_resource type="Theme" uid="uid://b2vnrnnylbxce" path="res://Theme/GameTheme.tres" id="4_yo0mt"]
 [ext_resource type="Texture2D" uid="uid://b8gubxi6w0g6y" path="res://Sprites/SANDWICH.png" id="5_mw3w6"]
 [ext_resource type="Texture2D" uid="uid://3ckad8dci3xg" path="res://Sprites/Bomb.png" id="6_648qr"]
 [ext_resource type="Texture2D" uid="uid://c1clo6k4aioye" path="res://Sprites/baditem.png" id="6_npjju"]
@@ -23,7 +23,7 @@ texture = ExtResource("1_km3e3")
 
 [node name="FallingItems" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.462745)
-script = ExtResource("3_u4xqv")
+script = ExtResource("3_xt4sd")
 drop_margin = 50
 
 [node name="Timer" type="Timer" parent="FallingItems"]
@@ -41,7 +41,7 @@ alignment = 1
 
 [node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_4k8q1")
+theme = ExtResource("4_yo0mt")
 text = "SMELLIE ELLiE'S
 CATCH EM ALL"
 horizontal_alignment = 1
@@ -49,13 +49,13 @@ horizontal_alignment = 1
 [node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("2_4k8q1")
+theme = ExtResource("4_yo0mt")
 text = "PLAY"
 
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("2_4k8q1")
+theme = ExtResource("4_yo0mt")
 text = "QUIT"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
@@ -69,7 +69,7 @@ theme_override_constants/separation = 20
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(180, 2.08165e-12)
 layout_mode = 2
-theme = ExtResource("2_4k8q1")
+theme = ExtResource("4_yo0mt")
 theme_override_font_sizes/font_size = 30
 text = "GOOD ITEMS:"
 
@@ -115,7 +115,7 @@ theme_override_constants/separation = 20
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(180, 2.08165e-12)
 layout_mode = 2
-theme = ExtResource("2_4k8q1")
+theme = ExtResource("4_yo0mt")
 theme_override_font_sizes/font_size = 30
 text = "BAD ITEMS:"
 
@@ -140,7 +140,7 @@ theme_override_constants/separation = 20
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(180, 2.08165e-12)
 layout_mode = 2
-theme = ExtResource("2_4k8q1")
+theme = ExtResource("4_yo0mt")
 theme_override_font_sizes/font_size = 30
 text = "POWER UPS:"
 

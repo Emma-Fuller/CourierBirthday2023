@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://b2vnrnnylbxce"]
 
-[ext_resource type="StyleBox" uid="uid://b0tdbanmvyuod" path="res://ButtonTexture.tres" id="1_bx2g4"]
-[ext_resource type="FontFile" uid="uid://blffauadda71b" path="res://Long Weekend.ttf" id="1_jidy0"]
+[ext_resource type="StyleBox" uid="uid://b0tdbanmvyuod" path="res://Theme/ButtonTexture.tres" id="1_bx2g4"]
+[ext_resource type="FontFile" uid="uid://blffauadda71b" path="res://Theme/Long Weekend.ttf" id="1_jidy0"]
 
 [resource]
 default_font = ExtResource("1_jidy0")

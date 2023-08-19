@@ -1,4 +1,4 @@
-extends RichTextLabel
+extends Label
 
 @export var initial_time = 60
 var current_time
@@ -16,7 +16,7 @@ func tick_down():
 	
 	if current_time <= 0:
 		game_ended.emit()
-		$Timer.stop()
+		$"Time Left Timer".stop()
 
 func redraw_time():
 	text = "Time left: %d" % current_time

@@ -1,8 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://cu2df8fshriap"]
 
 [ext_resource type="Script" path="res://Prefabs/FallingItem/FallingItem.gd" id="1_bud4b"]
-[ext_resource type="Texture2D" uid="uid://bbxcvntp7gyfw" path="res://Sprites/gooditem.png" id="2_itws4"]
 [ext_resource type="AudioStream" uid="uid://cy3j5nboqlfes" path="res://Sounds/pickup2.ogg" id="4_x8aye"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ywgcd"]
+load_path = "res://.godot/imported/gooditem.png-5b40e238049f317ec0642eca4dacac7d.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a6y4p"]
 
@@ -14,7 +16,7 @@ rotation_speed = 1
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("2_itws4")
+texture = SubResource("CompressedTexture2D_ywgcd")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 2

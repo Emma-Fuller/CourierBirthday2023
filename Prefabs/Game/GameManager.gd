@@ -4,8 +4,8 @@ extends Node2D
 var item = preload("res://Prefabs/FallingItem/FallingItem.tscn")
 var pool: ItemPool
 
-var defaultPool := preload("res://Items/DefaultItemPool.tres")
-var pewPewPowerPool := preload("res://Items/PewPewPowerPool.tres")
+var defaultPool := preload("res://Resources/Pools/DefaultItemPool.tres")
+var pewPewPowerPool := preload("res://Resources/Pools/PewPewPowerPool.tres")
 
 var magnet_active := false
 
@@ -26,7 +26,7 @@ func get_random_window_x() -> int:
 	return randi_range(0 + drop_margin, window_size.x - drop_margin)
 
 func on_game_ended():
-	$Timer.stop()
+	$"Spawn Timer".stop()
 	await get_tree().create_timer(2).timeout	
 	get_window().add_child.call_deferred(
 		load("res://Prefabs/EndCard/EndCard.tscn").instantiate()

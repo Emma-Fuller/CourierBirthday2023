@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Prefabs/TitleScene/TitleScene.gd" id="1_wte15"]
 [ext_resource type="Texture2D" uid="uid://cwncik42ogb6j" path="res://Sprites/Background.png" id="2_qnsxq"]
-[ext_resource type="Script" path="res://GameManager.gd" id="3_jfnkd"]
-[ext_resource type="Theme" uid="uid://b2vnrnnylbxce" path="res://GameTheme.tres" id="8_7ej1e"]
+[ext_resource type="Script" path="res://Prefabs/Game/GameManager.gd" id="3_np1nt"]
+[ext_resource type="Theme" uid="uid://b2vnrnnylbxce" path="res://Theme/GameTheme.tres" id="4_u32bb"]
 [ext_resource type="Script" path="res://Prefabs/EndCard/FinalScore.gd" id="9_mm1ey"]
 
 [node name="TitleScene" type="Node2D"]
@@ -16,7 +16,7 @@ texture = ExtResource("2_qnsxq")
 
 [node name="FallingItems" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.462745)
-script = ExtResource("3_jfnkd")
+script = ExtResource("3_np1nt")
 drop_margin = 50
 
 [node name="Timer" type="Timer" parent="FallingItems"]
@@ -34,14 +34,14 @@ alignment = 1
 
 [node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("8_7ej1e")
+theme = ExtResource("4_u32bb")
 text = "WOMP WOMP
 GAME OVER"
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("8_7ej1e")
+theme = ExtResource("4_u32bb")
 text = "Final score: 10000"
 horizontal_alignment = 1
 script = ExtResource("9_mm1ey")
@@ -49,13 +49,13 @@ script = ExtResource("9_mm1ey")
 [node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("8_7ej1e")
+theme = ExtResource("4_u32bb")
 text = "Replay"
 
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("8_7ej1e")
+theme = ExtResource("4_u32bb")
 text = "QUIT"
 
 [connection signal="timeout" from="FallingItems/Timer" to="FallingItems" method="spawn_item"]

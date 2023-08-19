@@ -1,0 +1,101 @@
+[gd_scene load_steps=9 format=3 uid="uid://d4hn6uii757sm"]
+
+[ext_resource type="Script" path="res://Prefabs/Game/GameManager.gd" id="1_vb2og"]
+[ext_resource type="Texture2D" uid="uid://cwncik42ogb6j" path="res://Sprites/Background.png" id="2_0ypyp"]
+[ext_resource type="PackedScene" uid="uid://dsyutym4unj7t" path="res://Prefabs/Player/Player.tscn" id="3_83y36"]
+[ext_resource type="AudioStream" uid="uid://bj7tl8p802aa6" path="res://Sounds/Swinging Pants.ogg" id="4_1d4jy"]
+[ext_resource type="Texture2D" uid="uid://bjwk8yl73ft0c" path="res://Sprites/panel_woodPaperWear.png" id="5_rej6x"]
+[ext_resource type="Theme" uid="uid://b2vnrnnylbxce" path="res://Theme/GameTheme.tres" id="6_a15il"]
+[ext_resource type="Script" path="res://Prefabs/Game/Score.gd" id="7_w7mif"]
+[ext_resource type="Script" path="res://Prefabs/Game/TimeLeft.gd" id="8_shg7w"]
+
+[node name="GameManager" type="Node2D"]
+script = ExtResource("1_vb2og")
+drop_margin = 100
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(595, 355)
+scale = Vector2(1.31672, 1.31672)
+texture = ExtResource("2_0ypyp")
+
+[node name="Spawn Timer" type="Timer" parent="."]
+wait_time = 0.75
+autostart = true
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("3_83y36")]
+position = Vector2(634, 619)
+scale = Vector2(-0.25, 0.25)
+
+[node name="Background Music" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(151, 52)
+stream = ExtResource("4_1d4jy")
+volume_db = -16.2
+autoplay = true
+
+[node name="Score Area" type="CenterContainer" parent="."]
+offset_left = 956.0
+offset_top = -11.0
+offset_right = 1356.0
+offset_bottom = 139.0
+scale = Vector2(0.6, 0.6)
+
+[node name="Background" type="NinePatchRect" parent="Score Area"]
+texture_filter = 1
+texture_repeat = 2
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+texture = ExtResource("5_rej6x")
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Score Label" type="Label" parent="Score Area"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+layout_mode = 2
+theme = ExtResource("6_a15il")
+text = "Score: 2000
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_w7mif")
+
+[node name="Timer Area" type="CenterContainer" parent="."]
+offset_left = 956.0
+offset_top = 53.0
+offset_right = 1356.0
+offset_bottom = 203.0
+scale = Vector2(0.6, 0.6)
+
+[node name="Background" type="NinePatchRect" parent="Timer Area"]
+texture_filter = 1
+texture_repeat = 2
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+texture = ExtResource("5_rej6x")
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 64, 64)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Time Left" type="Label" parent="Timer Area"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+layout_mode = 2
+theme = ExtResource("6_a15il")
+text = "Time Left: 60"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_shg7w")
+
+[node name="Time Left Timer" type="Timer" parent="Timer Area/Time Left"]
+autostart = true
+
+[connection signal="timeout" from="Spawn Timer" to="." method="spawn_item"]
+[connection signal="game_ended" from="Timer Area/Time Left" to="." method="on_game_ended"]
+[connection signal="timeout" from="Timer Area/Time Left/Time Left Timer" to="Timer Area/Time Left" method="tick_down"]

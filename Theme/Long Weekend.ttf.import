@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://blffauadda71b"
-path="res://.godot/imported/Long Weekend.ttf-b74b255592205acf6085be4904fbdb77.fontdata"
+path="res://.godot/imported/Long Weekend.ttf-cea52226b657ec304cca1e69c05b259b.fontdata"
 
 [deps]
 
-source_file="res://Long Weekend.ttf"
-dest_files=["res://.godot/imported/Long Weekend.ttf-b74b255592205acf6085be4904fbdb77.fontdata"]
+source_file="res://Theme/Long Weekend.ttf"
+dest_files=["res://.godot/imported/Long Weekend.ttf-cea52226b657ec304cca1e69c05b259b.fontdata"]
 
 [params]
 
