@@ -6,7 +6,7 @@
 [ext_resource type="Theme" uid="uid://b2vnrnnylbxce" path="res://Theme/GameTheme.tres" id="4_u32bb"]
 [ext_resource type="Script" path="res://Prefabs/EndCard/FinalScore.gd" id="9_mm1ey"]
 
-[node name="TitleScene" type="Node2D"]
+[node name="End Card" type="Node2D"]
 script = ExtResource("1_wte15")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -14,50 +14,50 @@ position = Vector2(595, 355)
 scale = Vector2(1.31672, 1.31672)
 texture = ExtResource("2_qnsxq")
 
-[node name="FallingItems" type="Node2D" parent="."]
+[node name="Falling Items" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.462745)
 script = ExtResource("3_np1nt")
 drop_margin = 50
 
-[node name="Timer" type="Timer" parent="FallingItems"]
+[node name="Spawn Timer" type="Timer" parent="Falling Items"]
 wait_time = 0.75
 autostart = true
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="UI Area" type="CenterContainer" parent="."]
 offset_right = 1200.0
 offset_bottom = 700.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="Vertical Layout" type="VBoxContainer" parent="UI Area"]
 layout_mode = 2
 theme_override_constants/separation = 40
 alignment = 1
 
-[node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="Game Over Text" type="Label" parent="UI Area/Vertical Layout"]
 layout_mode = 2
 theme = ExtResource("4_u32bb")
 text = "WOMP WOMP
 GAME OVER"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="Final Score Text" type="Label" parent="UI Area/Vertical Layout"]
 layout_mode = 2
 theme = ExtResource("4_u32bb")
 text = "Final score: 10000"
 horizontal_alignment = 1
 script = ExtResource("9_mm1ey")
 
-[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Replay Button" type="Button" parent="UI Area/Vertical Layout"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("4_u32bb")
 text = "Replay"
 
-[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Quit Button" type="Button" parent="UI Area/Vertical Layout"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("4_u32bb")
 text = "QUIT"
 
-[connection signal="timeout" from="FallingItems/Timer" to="FallingItems" method="spawn_item"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="timeout" from="Falling Items/Spawn Timer" to="Falling Items" method="spawn_item"]
+[connection signal="pressed" from="UI Area/Vertical Layout/Replay Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="UI Area/Vertical Layout/Quit Button" to="." method="_on_quit_button_pressed"]

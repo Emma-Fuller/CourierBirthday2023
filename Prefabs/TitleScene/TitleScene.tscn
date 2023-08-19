@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dxuftvi76jvjw" path="res://Sprites/Tealberry.png" id="11_m74pc"]
 [ext_resource type="Texture2D" uid="uid://bs3mp6wo7vrfa" path="res://Sprites/PewPew.png" id="12_xup56"]
 
-[node name="TitleScene" type="Node2D"]
+[node name="Title Scene" type="Node2D"]
 script = ExtResource("1_1brqf")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -21,143 +21,143 @@ position = Vector2(595, 355)
 scale = Vector2(1.31672, 1.31672)
 texture = ExtResource("1_km3e3")
 
-[node name="FallingItems" type="Node2D" parent="."]
+[node name="Falling Items" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.462745)
 script = ExtResource("3_xt4sd")
 drop_margin = 50
 
-[node name="Timer" type="Timer" parent="FallingItems"]
+[node name="Spawn Timer" type="Timer" parent="Falling Items"]
 wait_time = 0.75
 autostart = true
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="UI Area" type="CenterContainer" parent="."]
 offset_right = 1200.0
 offset_bottom = 700.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="Vertical Layout" type="VBoxContainer" parent="UI Area"]
 layout_mode = 2
 theme_override_constants/separation = 40
 alignment = 1
 
-[node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="Game Title" type="Label" parent="UI Area/Vertical Layout"]
 layout_mode = 2
 theme = ExtResource("4_yo0mt")
 text = "SMELLIE ELLiE'S
 CATCH EM ALL"
 horizontal_alignment = 1
 
-[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Play Button" type="Button" parent="UI Area/Vertical Layout"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("4_yo0mt")
 text = "PLAY"
 
-[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Quit Button" type="Button" parent="UI Area/Vertical Layout"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("4_yo0mt")
 text = "QUIT"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+[node name="Items Area" type="VBoxContainer" parent="UI Area/Vertical Layout"]
 layout_mode = 2
 theme_override_constants/separation = -10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+[node name="Good Items" type="HBoxContainer" parent="UI Area/Vertical Layout/Items Area"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Good Items Text" type="Label" parent="UI Area/Vertical Layout/Items Area/Good Items"]
 custom_minimum_size = Vector2(180, 2.08165e-12)
 layout_mode = 2
 theme = ExtResource("4_yo0mt")
 theme_override_font_sizes/font_size = 30
 text = "GOOD ITEMS:"
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Sandwich" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Good Items"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 texture = ExtResource("5_mw3w6")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TextureRect2" type="TextureRect" parent="CenterContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Minty" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Good Items"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 texture = ExtResource("6_tm388")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TextureRect3" type="TextureRect" parent="CenterContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Fallout Boy" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Good Items"]
 custom_minimum_size = Vector2(75, 50)
 layout_mode = 2
 texture = ExtResource("7_6b714")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TextureRect4" type="TextureRect" parent="CenterContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="MISSING 1" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Good Items"]
 custom_minimum_size = Vector2(75, 50)
 layout_mode = 2
 texture = ExtResource("6_npjju")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TextureRect5" type="TextureRect" parent="CenterContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="MISSING 2" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Good Items"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 texture = ExtResource("6_npjju")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+[node name="Bad Items" type="HBoxContainer" parent="UI Area/Vertical Layout/Items Area"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Bad Items Text" type="Label" parent="UI Area/Vertical Layout/Items Area/Bad Items"]
 custom_minimum_size = Vector2(180, 2.08165e-12)
 layout_mode = 2
 theme = ExtResource("4_yo0mt")
 theme_override_font_sizes/font_size = 30
 text = "BAD ITEMS:"
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Bomb" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Bad Items"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 texture = ExtResource("6_648qr")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TextureRect2" type="TextureRect" parent="CenterContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Broken Heart" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Bad Items"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 texture = ExtResource("7_dgrs7")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+[node name="Power Ups" type="HBoxContainer" parent="UI Area/Vertical Layout/Items Area"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer/HBoxContainer3"]
+[node name="Power Ups Text" type="Label" parent="UI Area/Vertical Layout/Items Area/Power Ups"]
 custom_minimum_size = Vector2(180, 2.08165e-12)
 layout_mode = 2
 theme = ExtResource("4_yo0mt")
 theme_override_font_sizes/font_size = 30
 text = "POWER UPS:"
 
-[node name="TextureRect5" type="TextureRect" parent="CenterContainer/VBoxContainer/VBoxContainer/HBoxContainer3"]
+[node name="Tealberry" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Power Ups"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 texture = ExtResource("11_m74pc")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TextureRect6" type="TextureRect" parent="CenterContainer/VBoxContainer/VBoxContainer/HBoxContainer3"]
+[node name="PewPew" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Power Ups"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 texture = ExtResource("12_xup56")
 expand_mode = 1
 stretch_mode = 5
 
-[connection signal="timeout" from="FallingItems/Timer" to="FallingItems" method="spawn_item"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="timeout" from="Falling Items/Spawn Timer" to="Falling Items" method="spawn_item"]
+[connection signal="pressed" from="UI Area/Vertical Layout/Play Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="UI Area/Vertical Layout/Quit Button" to="." method="_on_quit_button_pressed"]

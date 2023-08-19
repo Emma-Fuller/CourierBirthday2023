@@ -11,11 +11,11 @@ func _process(delta):
 	)
 	
 	if not moving and movingVector.length() != 0:
-		$AnimatedSprite.play("walking")
+		$"Ellie Sprite".play("walking")
 		moving = true
 		
 	if moving and movingVector.length() == 0:
-		$AnimatedSprite.play("neutral")
+		$"Ellie Sprite".play("neutral")
 		moving = false
 		
 	if movingVector.x < 0:

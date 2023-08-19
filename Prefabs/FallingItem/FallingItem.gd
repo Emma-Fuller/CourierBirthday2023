@@ -11,8 +11,8 @@ var rotate_scale = 1
 var drop_controller
 
 func refresh_item_data():
-	$Sprite2D.texture = item_data.sprite
-	$AudioStreamPlayer2D.stream = item_data.collect_sound
+	$"Item Sprite".texture = item_data.sprite
+	$"Collect Sound".stream = item_data.collect_sound
 
 func _ready():
 	drop_controller = get_parent()
@@ -42,7 +42,7 @@ func _physics_process(delta):
 		
 
 func on_pickup(_area):
-	$AudioStreamPlayer2D.play()
+	$"Collect Sound".play()
 	ScoreManager.score += item_data.score_value
 	destroy_deferred.call_deferred()
 	
@@ -50,9 +50,9 @@ func on_pickup(_area):
 
 func destroy_deferred():
 	destroying = true
-	$Sprite2D.visible = false
-	$Area2D/CollisionShape2D.disabled = true
-	await $AudioStreamPlayer2D.finished
+	$"Item Sprite".visible = false
+	$"Collider/Collision Area".disabled = true
+	await $"Collect Sound".finished
 	
 	queue_free()
 
