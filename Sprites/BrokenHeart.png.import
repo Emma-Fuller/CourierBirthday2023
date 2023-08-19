@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjwk8yl73ft0c"
-path="res://.godot/imported/panel_woodPaperWear.png-43e86bcc6bca41ea7725a6438a4b0b7c.ctex"
+uid="uid://c1aclyxdruew4"
+path="res://.godot/imported/BrokenHeart.png-d732ae01b501bd4f04a52897fc1324de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/panel_woodPaperWear.png"
-dest_files=["res://.godot/imported/panel_woodPaperWear.png-43e86bcc6bca41ea7725a6438a4b0b7c.ctex"]
+source_file="res://Sprites/BrokenHeart.png"
+dest_files=["res://.godot/imported/BrokenHeart.png-d732ae01b501bd4f04a52897fc1324de.ctex"]
 
 [params]
 

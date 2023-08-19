@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://dsyutym4unj7t"]
 
 [ext_resource type="Script" path="res://Prefabs/Player/Player.gd" id="1_etgfe"]
-[ext_resource type="Texture2D" uid="uid://bi80s0ld6whu0" path="res://Sprites/Ellie_Neutral.png" id="2_ske1u"]
-[ext_resource type="Texture2D" uid="uid://3ok6dbf31lwd" path="res://Sprites/Ellie_Run1.png" id="3_stlqs"]
-[ext_resource type="Texture2D" uid="uid://bb2gdies6dd4q" path="res://Sprites/Ellie_Run2.png" id="4_l6vyc"]
+[ext_resource type="Texture2D" uid="uid://bi80s0ld6whu0" path="res://Sprites/EllieNeutral.png" id="2_vquyn"]
+[ext_resource type="Texture2D" uid="uid://3ok6dbf31lwd" path="res://Sprites/EllieRun1.png" id="3_jx5dm"]
+[ext_resource type="Texture2D" uid="uid://bb2gdies6dd4q" path="res://Sprites/EllieRun2.png" id="4_6at2p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1gvd5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ske1u")
+"texture": ExtResource("2_vquyn")
 }],
 "loop": true,
 "name": &"neutral",
@@ -17,10 +17,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_stlqs")
+"texture": ExtResource("3_jx5dm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_l6vyc")
+"texture": ExtResource("4_6at2p")
 }],
 "loop": true,
 "name": &"walking",

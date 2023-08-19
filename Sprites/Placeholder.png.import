@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1aclyxdruew4"
-path="res://.godot/imported/Broken_Heart.png-7741a9085b026a010646a30d38a82df7.ctex"
+uid="uid://c1clo6k4aioye"
+path="res://.godot/imported/Placeholder.png-ae20a6f5fd48f8f57910ae0fee26934b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Broken_Heart.png"
-dest_files=["res://.godot/imported/Broken_Heart.png-7741a9085b026a010646a30d38a82df7.ctex"]
+source_file="res://Sprites/Placeholder.png"
+dest_files=["res://.godot/imported/Placeholder.png-ae20a6f5fd48f8f57910ae0fee26934b.ctex"]
 
 [params]
 

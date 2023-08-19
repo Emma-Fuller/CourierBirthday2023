@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cu2df8fshriap"]
 
 [ext_resource type="Script" path="res://Prefabs/FallingItem/FallingItem.gd" id="1_bud4b"]
-[ext_resource type="AudioStream" uid="uid://cy3j5nboqlfes" path="res://Sounds/pickup2.ogg" id="4_x8aye"]
+[ext_resource type="AudioStream" uid="uid://cy3j5nboqlfes" path="res://Sounds/PowerUpSound.ogg" id="2_mlfq6"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ywgcd"]
 
@@ -25,7 +25,7 @@ scale = Vector2(2.5, 2.5)
 shape = SubResource("CircleShape2D_a6y4p")
 
 [node name="Collect Sound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_x8aye")
+stream = ExtResource("2_mlfq6")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 scale = Vector2(2.5, 2.5)

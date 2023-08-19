@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1clo6k4aioye"
-path="res://.godot/imported/baditem.png-02b50e73f36e56fa8bea9ddf8de8a798.ctex"
+uid="uid://bi80s0ld6whu0"
+path="res://.godot/imported/EllieNeutral.png-9b629a931f92e98e32d43f8dc3a19462.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/baditem.png"
-dest_files=["res://.godot/imported/baditem.png-02b50e73f36e56fa8bea9ddf8de8a798.ctex"]
+source_file="res://Sprites/EllieNeutral.png"
+dest_files=["res://.godot/imported/EllieNeutral.png-9b629a931f92e98e32d43f8dc3a19462.ctex"]
 
 [params]
 

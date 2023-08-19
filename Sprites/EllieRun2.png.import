@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3ok6dbf31lwd"
-path="res://.godot/imported/Ellie_Run1.png-ac4a6d0d7c32949dd1471fbd63b0a7d6.ctex"
+uid="uid://bb2gdies6dd4q"
+path="res://.godot/imported/EllieRun2.png-b732792ddc77357acd53e36762c08ca5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Ellie_Run1.png"
-dest_files=["res://.godot/imported/Ellie_Run1.png-ac4a6d0d7c32949dd1471fbd63b0a7d6.ctex"]
+source_file="res://Sprites/EllieRun2.png"
+dest_files=["res://.godot/imported/EllieRun2.png-b732792ddc77357acd53e36762c08ca5.ctex"]
 
 [params]
 

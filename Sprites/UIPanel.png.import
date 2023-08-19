@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi80s0ld6whu0"
-path="res://.godot/imported/Ellie_Neutral.png-b104cc05015d48bb9a3858b7b55f0a03.ctex"
+uid="uid://bjwk8yl73ft0c"
+path="res://.godot/imported/UIPanel.png-e2d5968da46de7d55c877fb752016217.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Ellie_Neutral.png"
-dest_files=["res://.godot/imported/Ellie_Neutral.png-b104cc05015d48bb9a3858b7b55f0a03.ctex"]
+source_file="res://Sprites/UIPanel.png"
+dest_files=["res://.godot/imported/UIPanel.png-e2d5968da46de7d55c877fb752016217.ctex"]
 
 [params]
 

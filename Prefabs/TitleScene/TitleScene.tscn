@@ -6,10 +6,10 @@
 [ext_resource type="Theme" uid="uid://b2vnrnnylbxce" path="res://Theme/GameTheme.tres" id="4_yo0mt"]
 [ext_resource type="Texture2D" uid="uid://b8gubxi6w0g6y" path="res://Sprites/SANDWICH.png" id="5_mw3w6"]
 [ext_resource type="Texture2D" uid="uid://3ckad8dci3xg" path="res://Sprites/Bomb.png" id="6_648qr"]
-[ext_resource type="Texture2D" uid="uid://c1clo6k4aioye" path="res://Sprites/baditem.png" id="6_npjju"]
 [ext_resource type="Texture2D" uid="uid://btlhmvksepfxy" path="res://Sprites/Minty.png" id="6_tm388"]
 [ext_resource type="Texture2D" uid="uid://drwfa448r8dqe" path="res://Sprites/FalloutBoy.png" id="7_6b714"]
-[ext_resource type="Texture2D" uid="uid://c1aclyxdruew4" path="res://Sprites/Broken_Heart.png" id="7_dgrs7"]
+[ext_resource type="Texture2D" uid="uid://c1clo6k4aioye" path="res://Sprites/Placeholder.png" id="8_s3oac"]
+[ext_resource type="Texture2D" uid="uid://c1aclyxdruew4" path="res://Sprites/BrokenHeart.png" id="10_kwjxy"]
 [ext_resource type="Texture2D" uid="uid://dxuftvi76jvjw" path="res://Sprites/Tealberry.png" id="11_m74pc"]
 [ext_resource type="Texture2D" uid="uid://bs3mp6wo7vrfa" path="res://Sprites/PewPew.png" id="12_xup56"]
 
@@ -97,14 +97,14 @@ stretch_mode = 5
 [node name="MISSING 1" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Good Items"]
 custom_minimum_size = Vector2(75, 50)
 layout_mode = 2
-texture = ExtResource("6_npjju")
+texture = ExtResource("8_s3oac")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="MISSING 2" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Good Items"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-texture = ExtResource("6_npjju")
+texture = ExtResource("8_s3oac")
 expand_mode = 1
 stretch_mode = 5
 
@@ -129,7 +129,7 @@ stretch_mode = 5
 [node name="Broken Heart" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Bad Items"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-texture = ExtResource("7_dgrs7")
+texture = ExtResource("10_kwjxy")
 expand_mode = 1
 stretch_mode = 5
 
