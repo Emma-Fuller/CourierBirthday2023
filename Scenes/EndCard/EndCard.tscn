@@ -17,7 +17,6 @@ texture = ExtResource("2_kajcx")
 [node name="Falling Items" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.462745)
 script = ExtResource("3_dbhe2")
-drop_margin = 50
 
 [node name="Spawn Timer" type="Timer" parent="Falling Items"]
 wait_time = 0.75

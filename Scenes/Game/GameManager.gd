@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var drop_margin = 200
+var drop_margin = 100
 var item = preload("res://Scenes/FallingItem/FallingItem.tscn")
 var pool: ItemPool
 
@@ -38,10 +38,10 @@ func item_got(item_name: String):
 	match item_name:
 		"PewPew":
 			pool = pewPewPowerPool
-			
-			var air: Array = get_tree().get_nodes_in_group("items")
-			for old_item in air:
-				if old_item.item_data.name != "PewPew":
+
+			for old_item in get_tree().get_nodes_in_group("items"):
+				if old_item.item_data.name != "PewPew" \
+					and not pool.contains(old_item.item_data):
 					old_item.item_data = pool.pick_random()
 					old_item.refresh_item_data()
 			

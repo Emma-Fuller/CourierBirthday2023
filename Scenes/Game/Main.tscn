@@ -11,7 +11,6 @@
 
 [node name="Main Game" type="Node2D"]
 script = ExtResource("1_vb2og")
-drop_margin = 100
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(595, 355)
