@@ -28,17 +28,13 @@ func _physics_process(delta):
 	
 	rotation += delta * rotation_speed * rotate_scale
 	
-	if drop_controller.magnet_active:
-		var player = get_tree().get_first_node_in_group("player")
-		var distance = player.position.x - position.x
-		
-		var dir = -1 if player.position.x - position.x < 0 else 1
-		
-		if item_data.score_value < 0:
-			dir *= -1
-	
-		if abs(distance) > 10:
-			position += Vector2(dir, 0) * 100 * delta
+	if drop_controller.magnet_active and item_data.score_value > 0:
+		var basket: Node2D = get_tree().get_first_node_in_group("basket")
+		if basket and global_position.distance_to(basket.global_position) < 200:
+			global_position = global_position.move_toward(
+				basket.global_position,
+				clamp(global_position.distance_to(basket.global_position), 0, 10)
+			)
 		
 
 func on_pickup(_area):

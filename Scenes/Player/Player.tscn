@@ -43,6 +43,6 @@ animation = &"walking"
 position = Vector2(224, 0)
 collision_layer = 2
 
-[node name="Collision Shape" type="CollisionShape2D" parent="Collider"]
+[node name="Collision Shape" type="CollisionShape2D" parent="Collider" groups=["basket"]]
 position = Vector2(-248, -267)
 shape = SubResource("RectangleShape2D_pf1bv")
