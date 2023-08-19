@@ -7,6 +7,8 @@ var pool: ItemPool
 var defaultPool := preload("res://Items/DefaultItemPool.tres")
 var pewPewPowerPool := preload("res://Items/PewPewPowerPool.tres")
 
+var magnet_active := false
+
 func _ready():
 	pool = defaultPool
 
@@ -36,14 +38,18 @@ func on_game_ended():
 	queue_free()
 	
 func item_got(item_name: String):
-	if item_name == "PewPew":
-		pool = pewPewPowerPool
-		
-		var air: Array = get_tree().get_nodes_in_group("items")
-		for old_item in air:
+	match item_name:
+		"PewPew":
+			pool = pewPewPowerPool
+			
+			var air: Array = get_tree().get_nodes_in_group("items")
+			for old_item in air:
 				old_item.item_data = pool.pick_random()
 				old_item.refresh_item_data()
-		
-		await get_tree().create_timer(5).timeout
-		pool = defaultPool
-	
+			
+			await get_tree().create_timer(5).timeout
+			pool = defaultPool
+		"Tealberry":
+			magnet_active = true
+			await get_tree().create_timer(5).timeout
+			magnet_active = false

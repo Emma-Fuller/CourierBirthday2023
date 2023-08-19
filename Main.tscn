@@ -22,7 +22,7 @@ texture = ExtResource("8_qegxo")
 wait_time = 0.75
 autostart = true
 
-[node name="Player" parent="." instance=ExtResource("3_b1ltu")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("3_b1ltu")]
 position = Vector2(634, 619)
 scale = Vector2(-0.25, 0.25)
 
@@ -91,6 +91,7 @@ text = "Time Left: 60"
 fit_content = true
 autowrap_mode = 0
 script = ExtResource("14_w33aa")
+initial_time = 5
 
 [node name="Timer" type="Timer" parent="CenterContainer2/RichTextLabel"]
 autostart = true
