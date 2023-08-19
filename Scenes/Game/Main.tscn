@@ -26,14 +26,18 @@ autostart = true
 position = Vector2(634, 619)
 scale = Vector2(-0.25, 0.25)
 
-[node name="Score Area" type="CenterContainer" parent="."]
-offset_left = 956.0
-offset_top = -11.0
-offset_right = 1356.0
-offset_bottom = 139.0
-scale = Vector2(0.6, 0.6)
+[node name="Data Signs" type="VBoxContainer" parent="."]
+offset_left = 992.0
+offset_top = 12.0
+offset_right = 1392.0
+offset_bottom = 220.0
+scale = Vector2(0.48, 0.48)
+theme_override_constants/separation = 8
 
-[node name="Background" type="NinePatchRect" parent="Score Area"]
+[node name="Score Area" type="CenterContainer" parent="Data Signs"]
+layout_mode = 2
+
+[node name="Background" type="NinePatchRect" parent="Data Signs/Score Area"]
 texture_filter = 1
 texture_repeat = 2
 custom_minimum_size = Vector2(400, 100)
@@ -47,7 +51,7 @@ patch_margin_bottom = 10
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="Score Label" type="Label" parent="Score Area"]
+[node name="Score Label" type="Label" parent="Data Signs/Score Area"]
 custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 layout_mode = 2
 theme = ExtResource("6_a15il")
@@ -57,14 +61,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("7_w7mif")
 
-[node name="Timer Area" type="CenterContainer" parent="."]
-offset_left = 956.0
-offset_top = 53.0
-offset_right = 1356.0
-offset_bottom = 203.0
-scale = Vector2(0.6, 0.6)
+[node name="Timer Area" type="CenterContainer" parent="Data Signs"]
+layout_mode = 2
 
-[node name="Background" type="NinePatchRect" parent="Timer Area"]
+[node name="Background" type="NinePatchRect" parent="Data Signs/Timer Area"]
 texture_filter = 1
 texture_repeat = 2
 custom_minimum_size = Vector2(400, 100)
@@ -78,7 +78,7 @@ patch_margin_bottom = 10
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="Time Left" type="Label" parent="Timer Area"]
+[node name="Time Left" type="Label" parent="Data Signs/Timer Area"]
 custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 layout_mode = 2
 theme = ExtResource("6_a15il")
@@ -87,11 +87,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("8_shg7w")
 
-[node name="Time Left Timer" type="Timer" parent="Timer Area/Time Left"]
+[node name="Time Left Timer" type="Timer" parent="Data Signs/Timer Area/Time Left"]
 autostart = true
 
 [node name="PowerBars" type="VBoxContainer" parent="."]
-modulate = Color(1, 1, 1, 0.337255)
+modulate = Color(1, 1, 1, 0.4)
 offset_left = 8.0
 offset_top = 6.0
 offset_right = 387.0
@@ -140,5 +140,5 @@ value = 0.44
 show_percentage = false
 
 [connection signal="timeout" from="Spawn Timer" to="." method="spawn_item"]
-[connection signal="game_ended" from="Timer Area/Time Left" to="." method="on_game_ended"]
-[connection signal="timeout" from="Timer Area/Time Left/Time Left Timer" to="Timer Area/Time Left" method="tick_down"]
+[connection signal="game_ended" from="Data Signs/Timer Area/Time Left" to="." method="on_game_ended"]
+[connection signal="timeout" from="Data Signs/Timer Area/Time Left/Time Left Timer" to="Data Signs/Timer Area/Time Left" method="tick_down"]
