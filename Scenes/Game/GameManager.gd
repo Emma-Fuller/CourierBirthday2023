@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var drop_margin = 200
-var item = preload("res://Prefabs/FallingItem/FallingItem.tscn")
+var item = preload("res://Scenes/FallingItem/FallingItem.tscn")
 var pool: ItemPool
 
 var defaultPool := preload("res://Resources/Pools/DefaultItemPool.tres")
@@ -29,7 +29,7 @@ func on_game_ended():
 	$"Spawn Timer".stop()
 	await get_tree().create_timer(2).timeout	
 	get_window().add_child.call_deferred(
-		load("res://Prefabs/EndCard/EndCard.tscn").instantiate()
+		load("res://Scenes/EndCard/EndCard.tscn").instantiate()
 	)
 
 	queue_free()

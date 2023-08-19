@@ -2,7 +2,7 @@ extends Node2D
 
 func _on_play_button_pressed():
 	ScoreManager.score = 0
-	var game = load("res://Prefabs/Game/Main.tscn").instantiate()
+	var game = load("res://Scenes/Game/Main.tscn").instantiate()
 	get_window().add_child.call_deferred(game)
 	queue_free()
 

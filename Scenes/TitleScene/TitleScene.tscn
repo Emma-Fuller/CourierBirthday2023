@@ -1,29 +1,29 @@
 [gd_scene load_steps=13 format=3 uid="uid://c0atnlhuqsvft"]
 
-[ext_resource type="Script" path="res://Prefabs/TitleScene/TitleScene.gd" id="1_1brqf"]
-[ext_resource type="Texture2D" uid="uid://cwncik42ogb6j" path="res://Sprites/Background.png" id="1_km3e3"]
-[ext_resource type="Script" path="res://Prefabs/Game/GameManager.gd" id="3_xt4sd"]
-[ext_resource type="Theme" uid="uid://b2vnrnnylbxce" path="res://Theme/GameTheme.tres" id="4_yo0mt"]
-[ext_resource type="Texture2D" uid="uid://b8gubxi6w0g6y" path="res://Sprites/SANDWICH.png" id="5_mw3w6"]
-[ext_resource type="Texture2D" uid="uid://3ckad8dci3xg" path="res://Sprites/Bomb.png" id="6_648qr"]
-[ext_resource type="Texture2D" uid="uid://btlhmvksepfxy" path="res://Sprites/Minty.png" id="6_tm388"]
-[ext_resource type="Texture2D" uid="uid://drwfa448r8dqe" path="res://Sprites/FalloutBoy.png" id="7_6b714"]
-[ext_resource type="Texture2D" uid="uid://c1clo6k4aioye" path="res://Sprites/Placeholder.png" id="8_s3oac"]
-[ext_resource type="Texture2D" uid="uid://c1aclyxdruew4" path="res://Sprites/BrokenHeart.png" id="10_kwjxy"]
-[ext_resource type="Texture2D" uid="uid://dxuftvi76jvjw" path="res://Sprites/Tealberry.png" id="11_m74pc"]
-[ext_resource type="Texture2D" uid="uid://bs3mp6wo7vrfa" path="res://Sprites/PewPew.png" id="12_xup56"]
+[ext_resource type="Script" path="res://Scenes/TitleScene/TitleScene.gd" id="1_rbayy"]
+[ext_resource type="Texture2D" uid="uid://cwncik42ogb6j" path="res://Sprites/Background.png" id="2_kkl7l"]
+[ext_resource type="Script" path="res://Scenes/Game/GameManager.gd" id="3_3i7cy"]
+[ext_resource type="Theme" uid="uid://b2vnrnnylbxce" path="res://Theme/GameTheme.tres" id="4_thr0y"]
+[ext_resource type="Texture2D" uid="uid://b8gubxi6w0g6y" path="res://Sprites/SANDWICH.png" id="5_smywd"]
+[ext_resource type="Texture2D" uid="uid://btlhmvksepfxy" path="res://Sprites/Minty.png" id="6_ccutp"]
+[ext_resource type="Texture2D" uid="uid://drwfa448r8dqe" path="res://Sprites/FalloutBoy.png" id="7_1p16x"]
+[ext_resource type="Texture2D" uid="uid://c1clo6k4aioye" path="res://Sprites/Placeholder.png" id="8_rt2sl"]
+[ext_resource type="Texture2D" uid="uid://3ckad8dci3xg" path="res://Sprites/Bomb.png" id="9_ewxcj"]
+[ext_resource type="Texture2D" uid="uid://c1aclyxdruew4" path="res://Sprites/BrokenHeart.png" id="10_r1jp8"]
+[ext_resource type="Texture2D" uid="uid://dxuftvi76jvjw" path="res://Sprites/Tealberry.png" id="11_k4bpy"]
+[ext_resource type="Texture2D" uid="uid://bs3mp6wo7vrfa" path="res://Sprites/PewPew.png" id="12_ospfw"]
 
 [node name="Title Scene" type="Node2D"]
-script = ExtResource("1_1brqf")
+script = ExtResource("1_rbayy")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(595, 355)
 scale = Vector2(1.31672, 1.31672)
-texture = ExtResource("1_km3e3")
+texture = ExtResource("2_kkl7l")
 
 [node name="Falling Items" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.462745)
-script = ExtResource("3_xt4sd")
+script = ExtResource("3_3i7cy")
 drop_margin = 50
 
 [node name="Spawn Timer" type="Timer" parent="Falling Items"]
@@ -41,7 +41,7 @@ alignment = 1
 
 [node name="Game Title" type="Label" parent="UI Area/Vertical Layout"]
 layout_mode = 2
-theme = ExtResource("4_yo0mt")
+theme = ExtResource("4_thr0y")
 text = "SMELLIE ELLiE'S
 CATCH EM ALL"
 horizontal_alignment = 1
@@ -49,13 +49,13 @@ horizontal_alignment = 1
 [node name="Play Button" type="Button" parent="UI Area/Vertical Layout"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("4_yo0mt")
+theme = ExtResource("4_thr0y")
 text = "PLAY"
 
 [node name="Quit Button" type="Button" parent="UI Area/Vertical Layout"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("4_yo0mt")
+theme = ExtResource("4_thr0y")
 text = "QUIT"
 
 [node name="Items Area" type="VBoxContainer" parent="UI Area/Vertical Layout"]
@@ -69,42 +69,42 @@ theme_override_constants/separation = 20
 [node name="Good Items Text" type="Label" parent="UI Area/Vertical Layout/Items Area/Good Items"]
 custom_minimum_size = Vector2(180, 2.08165e-12)
 layout_mode = 2
-theme = ExtResource("4_yo0mt")
+theme = ExtResource("4_thr0y")
 theme_override_font_sizes/font_size = 30
 text = "GOOD ITEMS:"
 
 [node name="Sandwich" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Good Items"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-texture = ExtResource("5_mw3w6")
+texture = ExtResource("5_smywd")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Minty" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Good Items"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-texture = ExtResource("6_tm388")
+texture = ExtResource("6_ccutp")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Fallout Boy" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Good Items"]
 custom_minimum_size = Vector2(75, 50)
 layout_mode = 2
-texture = ExtResource("7_6b714")
+texture = ExtResource("7_1p16x")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="MISSING 1" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Good Items"]
 custom_minimum_size = Vector2(75, 50)
 layout_mode = 2
-texture = ExtResource("8_s3oac")
+texture = ExtResource("8_rt2sl")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="MISSING 2" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Good Items"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-texture = ExtResource("8_s3oac")
+texture = ExtResource("8_rt2sl")
 expand_mode = 1
 stretch_mode = 5
 
@@ -115,21 +115,21 @@ theme_override_constants/separation = 20
 [node name="Bad Items Text" type="Label" parent="UI Area/Vertical Layout/Items Area/Bad Items"]
 custom_minimum_size = Vector2(180, 2.08165e-12)
 layout_mode = 2
-theme = ExtResource("4_yo0mt")
+theme = ExtResource("4_thr0y")
 theme_override_font_sizes/font_size = 30
 text = "BAD ITEMS:"
 
 [node name="Bomb" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Bad Items"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-texture = ExtResource("6_648qr")
+texture = ExtResource("9_ewxcj")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Broken Heart" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Bad Items"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-texture = ExtResource("10_kwjxy")
+texture = ExtResource("10_r1jp8")
 expand_mode = 1
 stretch_mode = 5
 
@@ -140,21 +140,21 @@ theme_override_constants/separation = 20
 [node name="Power Ups Text" type="Label" parent="UI Area/Vertical Layout/Items Area/Power Ups"]
 custom_minimum_size = Vector2(180, 2.08165e-12)
 layout_mode = 2
-theme = ExtResource("4_yo0mt")
+theme = ExtResource("4_thr0y")
 theme_override_font_sizes/font_size = 30
 text = "POWER UPS:"
 
 [node name="Tealberry" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Power Ups"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-texture = ExtResource("11_m74pc")
+texture = ExtResource("11_k4bpy")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="PewPew" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Power Ups"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-texture = ExtResource("12_xup56")
+texture = ExtResource("12_ospfw")
 expand_mode = 1
 stretch_mode = 5
 
