@@ -33,9 +33,12 @@ func _physics_process(delta):
 		var distance = player.position.x - position.x
 		
 		var dir = -1 if player.position.x - position.x < 0 else 1
+		
+		if item_data.score_value < 0:
+			dir *= -1
 	
 		if abs(distance) > 10:
-			position += (Vector2(dir, 0) * 100 * delta)
+			position += Vector2(dir, 0) * 100 * delta
 		
 
 func on_pickup(_area):
