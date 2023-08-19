@@ -52,6 +52,7 @@ theme = ExtResource("4_thr0y")
 text = "PLAY"
 
 [node name="Quit Button" type="Button" parent="UI Area/Vertical Layout"]
+visible = false
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("4_thr0y")
@@ -59,17 +60,17 @@ text = "QUIT"
 
 [node name="Items Area" type="VBoxContainer" parent="UI Area/Vertical Layout"]
 layout_mode = 2
-theme_override_constants/separation = -10
+theme_override_constants/separation = 0
 
 [node name="Good Items" type="HBoxContainer" parent="UI Area/Vertical Layout/Items Area"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="Good Items Text" type="Label" parent="UI Area/Vertical Layout/Items Area/Good Items"]
-custom_minimum_size = Vector2(180, 2.08165e-12)
+custom_minimum_size = Vector2(200, 2.08165e-12)
 layout_mode = 2
 theme = ExtResource("4_thr0y")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "GOOD ITEMS:"
 
 [node name="Sandwich" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Good Items"]
@@ -112,10 +113,10 @@ layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="Bad Items Text" type="Label" parent="UI Area/Vertical Layout/Items Area/Bad Items"]
-custom_minimum_size = Vector2(180, 2.08165e-12)
+custom_minimum_size = Vector2(200, 2.08165e-12)
 layout_mode = 2
 theme = ExtResource("4_thr0y")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "BAD ITEMS:"
 
 [node name="Bomb" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Bad Items"]
@@ -137,10 +138,10 @@ layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="Power Ups Text" type="Label" parent="UI Area/Vertical Layout/Items Area/Power Ups"]
-custom_minimum_size = Vector2(180, 2.08165e-12)
+custom_minimum_size = Vector2(200, 2.08165e-12)
 layout_mode = 2
 theme = ExtResource("4_thr0y")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "POWER UPS:"
 
 [node name="Tealberry" type="TextureRect" parent="UI Area/Vertical Layout/Items Area/Power Ups"]

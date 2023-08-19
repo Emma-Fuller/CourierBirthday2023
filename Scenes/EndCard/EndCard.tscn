@@ -52,6 +52,7 @@ theme = ExtResource("4_8xb1c")
 text = "Replay"
 
 [node name="Quit Button" type="Button" parent="UI Area/Vertical Layout"]
+visible = false
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("4_8xb1c")
