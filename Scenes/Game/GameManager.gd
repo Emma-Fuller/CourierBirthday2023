@@ -9,8 +9,16 @@ var pewPewPowerPool := preload("res://Resources/Pools/PewPewPowerPool.tres")
 
 var magnet_active := false
 
+var pewpewtimer = Timer.new()
+var tealberrytimer = Timer.new()
+
 func _ready():
 	pool = defaultPool
+
+	add_child(pewpewtimer)
+	pewpewtimer.timeout.connect(end_pewpew_time)
+	add_child(tealberrytimer)
+	tealberrytimer.timeout.connect(end_tealberry_time)
 
 func spawn_item():
 	var new_item = item.instantiate() as FallingItem
@@ -37,22 +45,23 @@ func on_game_ended():
 func item_got(item_name: String):
 	match item_name:
 		"PewPew":
-			var old_wait_time = $"Spawn Timer".wait_time
-			$"Spawn Timer".wait_time = 0.25
+			$"Spawn Timer".wait_time = 0.50
 			pool = pewPewPowerPool
 
 			for old_item in get_tree().get_nodes_in_group("items"):
 				if not pool.contains(old_item.item_data):
 					old_item.item_data = pool.pick_random()
 					old_item.refresh_item_data()
-			
-			await get_tree().create_timer(5).timeout
-			$"Spawn Timer".wait_time = old_wait_time
-			pool = defaultPool
+			pewpewtimer.start(5)
 		"Tealberry":
 			magnet_active = true
+			tealberrytimer.start(5)
 
-			await get_tree().create_timer(5).timeout
-			magnet_active = false
+func end_pewpew_time():
+	$"Spawn Timer".wait_time = 0.75
+	pool = defaultPool
+	
+func end_tealberry_time():
+	magnet_active = false
 	
 	
