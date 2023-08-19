@@ -1,6 +1,6 @@
 extends Label
 
-@export var initial_time = 60
+@export var initial_time = 90
 var current_time
 
 signal game_ended

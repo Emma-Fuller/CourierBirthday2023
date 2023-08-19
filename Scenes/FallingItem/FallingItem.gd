@@ -42,6 +42,10 @@ func on_pickup(_area):
 	ScoreManager.score += item_data.score_value
 	destroy_deferred.call_deferred()
 	
+	if item_data.score_value < 0:
+		var player = get_tree().get_first_node_in_group("player")
+		player.stun_for(1)
+	
 	drop_controller.item_got(item_data.name)
 
 func destroy_deferred():
