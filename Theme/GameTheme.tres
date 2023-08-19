@@ -1,7 +1,13 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://b2vnrnnylbxce"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://b2vnrnnylbxce"]
 
 [ext_resource type="StyleBox" uid="uid://b0tdbanmvyuod" path="res://Theme/ButtonTexture.tres" id="1_bx2g4"]
 [ext_resource type="FontFile" uid="uid://blffauadda71b" path="res://Theme/Long Weekend.ttf" id="1_jidy0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17bj4"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xol1l"]
+bg_color = Color(0, 0.682353, 0.717647, 1)
 
 [resource]
 default_font = ExtResource("1_jidy0")
@@ -29,4 +35,6 @@ Button/styles/normal = ExtResource("1_bx2g4")
 Button/styles/pressed = ExtResource("1_bx2g4")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 72
+ProgressBar/styles/background = SubResource("StyleBoxFlat_17bj4")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_xol1l")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)

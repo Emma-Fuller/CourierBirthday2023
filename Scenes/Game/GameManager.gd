@@ -12,6 +12,12 @@ var magnet_active := false
 var pewpewtimer = Timer.new()
 var tealberrytimer = Timer.new()
 
+@onready var PewPewArea := $PowerBars/PewPew
+@onready var PewPewBar := $PowerBars/PewPew/PewPewBar
+
+@onready var TealberryArea := $PowerBars/Tealberry
+@onready var TealberryBar := $PowerBars/Tealberry/BerryBar
+
 func _ready():
 	pool = defaultPool
 
@@ -45,6 +51,7 @@ func on_game_ended():
 func item_got(item_name: String):
 	match item_name:
 		"PewPew":
+			PewPewArea.visible = true
 			$"Spawn Timer".wait_time = 0.50
 			pool = pewPewPowerPool
 
@@ -54,14 +61,22 @@ func item_got(item_name: String):
 					old_item.refresh_item_data()
 			pewpewtimer.start(5)
 		"Tealberry":
+			TealberryArea.visible = true
 			magnet_active = true
 			tealberrytimer.start(5)
 
 func end_pewpew_time():
+	PewPewArea.visible = false
 	$"Spawn Timer".wait_time = 0.75
 	pool = defaultPool
 	
 func end_tealberry_time():
+	TealberryArea.visible = false
 	magnet_active = false
+	
+func _process(delta):
+	if PewPewArea and TealberryArea:
+		TealberryBar.set_value_no_signal(tealberrytimer.time_left / tealberrytimer.wait_time + 0.01)
+		PewPewBar.set_value_no_signal(pewpewtimer.time_left / pewpewtimer.wait_time + 0.01)
 	
 	

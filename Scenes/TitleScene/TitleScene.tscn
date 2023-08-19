@@ -42,7 +42,7 @@ alignment = 1
 layout_mode = 2
 theme = ExtResource("4_thr0y")
 text = "SMELLIE ELLiE'S
-CATCH EM ALL"
+CATCH-'EM-ALL"
 horizontal_alignment = 1
 
 [node name="Play Button" type="Button" parent="UI Area/Vertical Layout"]

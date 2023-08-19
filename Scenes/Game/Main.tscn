@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d4hn6uii757sm"]
+[gd_scene load_steps=10 format=3 uid="uid://d4hn6uii757sm"]
 
 [ext_resource type="Script" path="res://Scenes/Game/GameManager.gd" id="1_vb2og"]
 [ext_resource type="Texture2D" uid="uid://cwncik42ogb6j" path="res://Sprites/Background.png" id="2_0ypyp"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bjwk8yl73ft0c" path="res://Sprites/UIPanel.png" id="5_hxn6h"]
 [ext_resource type="Theme" uid="uid://b2vnrnnylbxce" path="res://Theme/GameTheme.tres" id="6_a15il"]
 [ext_resource type="Script" path="res://Scenes/Game/Score.gd" id="7_w7mif"]
+[ext_resource type="Texture2D" uid="uid://dxuftvi76jvjw" path="res://Sprites/Tealberry.png" id="8_f4gl6"]
 [ext_resource type="Script" path="res://Scenes/Game/TimeLeft.gd" id="8_shg7w"]
+[ext_resource type="Texture2D" uid="uid://bs3mp6wo7vrfa" path="res://Sprites/PewPew.png" id="9_oaw0f"]
 
 [node name="Main Game" type="Node2D"]
 script = ExtResource("1_vb2og")
@@ -87,6 +89,55 @@ script = ExtResource("8_shg7w")
 
 [node name="Time Left Timer" type="Timer" parent="Timer Area/Time Left"]
 autostart = true
+
+[node name="PowerBars" type="VBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0.337255)
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 387.0
+offset_bottom = 160.0
+
+[node name="Tealberry" type="HBoxContainer" parent="PowerBars"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PowerBars/Tealberry"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("8_f4gl6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BerryBar" type="ProgressBar" parent="PowerBars/Tealberry"]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("6_a15il")
+max_value = 1.0
+value = 0.44
+show_percentage = false
+
+[node name="PewPew" type="HBoxContainer" parent="PowerBars"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PowerBars/PewPew"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("9_oaw0f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PewPewBar" type="ProgressBar" parent="PowerBars/PewPew"]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("6_a15il")
+max_value = 1.0
+value = 0.44
+show_percentage = false
 
 [connection signal="timeout" from="Spawn Timer" to="." method="spawn_item"]
 [connection signal="game_ended" from="Timer Area/Time Left" to="." method="on_game_ended"]
