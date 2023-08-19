@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0atnlhuqsvft"]
+[gd_scene load_steps=11 format=3 uid="uid://c0atnlhuqsvft"]
 
 [ext_resource type="Script" path="res://Prefabs/TitleScene/TitleScene.gd" id="1_1brqf"]
 [ext_resource type="Texture2D" uid="uid://cwncik42ogb6j" path="res://Sprites/Background.png" id="1_km3e3"]
@@ -6,7 +6,10 @@
 [ext_resource type="Script" path="res://GameManager.gd" id="3_u4xqv"]
 [ext_resource type="Texture2D" uid="uid://b8gubxi6w0g6y" path="res://Sprites/SANDWICH.png" id="5_mw3w6"]
 [ext_resource type="Texture2D" uid="uid://3ckad8dci3xg" path="res://Sprites/Bomb.png" id="6_648qr"]
+[ext_resource type="Texture2D" uid="uid://c1clo6k4aioye" path="res://Sprites/baditem.png" id="6_npjju"]
 [ext_resource type="Texture2D" uid="uid://c1aclyxdruew4" path="res://Sprites/Broken_Heart.png" id="7_dgrs7"]
+[ext_resource type="Texture2D" uid="uid://bbxcvntp7gyfw" path="res://Sprites/gooditem.png" id="9_xd3yk"]
+[ext_resource type="Texture2D" uid="uid://bnrjpra021fd4" path="res://Sprites/powerupitem.png" id="10_i4lt1"]
 
 [node name="TitleScene" type="Node2D"]
 script = ExtResource("1_1brqf")
@@ -78,28 +81,28 @@ stretch_mode = 5
 [node name="TextureRect2" type="TextureRect" parent="CenterContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-texture = ExtResource("5_mw3w6")
+texture = ExtResource("6_npjju")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="TextureRect3" type="TextureRect" parent="CenterContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(75, 50)
 layout_mode = 2
-texture = ExtResource("5_mw3w6")
+texture = ExtResource("6_npjju")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="TextureRect4" type="TextureRect" parent="CenterContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(75, 50)
 layout_mode = 2
-texture = ExtResource("5_mw3w6")
+texture = ExtResource("6_npjju")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="TextureRect5" type="TextureRect" parent="CenterContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-texture = ExtResource("5_mw3w6")
+texture = ExtResource("6_npjju")
 expand_mode = 1
 stretch_mode = 5
 
@@ -142,14 +145,14 @@ text = "POWER UPS:"
 [node name="TextureRect5" type="TextureRect" parent="CenterContainer/VBoxContainer/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-texture = ExtResource("5_mw3w6")
+texture = ExtResource("9_xd3yk")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="TextureRect6" type="TextureRect" parent="CenterContainer/VBoxContainer/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-texture = ExtResource("5_mw3w6")
+texture = ExtResource("10_i4lt1")
 expand_mode = 1
 stretch_mode = 5
 

@@ -27,10 +27,7 @@ func get_random_window_x() -> int:
 
 func on_game_ended():
 	$Timer.stop()
-	
-	while get_tree().get_nodes_in_group("items").size():
-		await get_tree().create_timer(0.1).timeout
-		
+	await get_tree().create_timer(2).timeout	
 	get_window().add_child.call_deferred(
 		load("res://Prefabs/EndCard/EndCard.tscn").instantiate()
 	)
@@ -53,3 +50,5 @@ func item_got(item_name: String):
 			magnet_active = true
 			await get_tree().create_timer(5).timeout
 			magnet_active = false
+	
+	

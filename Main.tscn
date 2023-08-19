@@ -91,7 +91,6 @@ text = "Time Left: 60"
 fit_content = true
 autowrap_mode = 0
 script = ExtResource("14_w33aa")
-initial_time = 5
 
 [node name="Timer" type="Timer" parent="CenterContainer2/RichTextLabel"]
 autostart = true
