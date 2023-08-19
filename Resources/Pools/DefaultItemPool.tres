@@ -11,4 +11,4 @@
 
 [resource]
 script = ExtResource("1_b42h3")
-items = Array[Resource("res://Resources/FallableItem.gd")]([ExtResource("1_yfjog"), ExtResource("2_arowu"), ExtResource("3_nht2s"), ExtResource("4_xknrs"), ExtResource("5_c1q65"), ExtResource("6_phq6x"), ExtResource("7_c5vls")])
+items = Array[Resource("res://Resources/FallableItem.gd")]([ExtResource("1_yfjog"), ExtResource("2_arowu"), ExtResource("3_nht2s"), ExtResource("4_xknrs"), ExtResource("5_c1q65"), ExtResource("6_phq6x"), ExtResource("7_c5vls"), ExtResource("6_phq6x"), ExtResource("3_nht2s")])
