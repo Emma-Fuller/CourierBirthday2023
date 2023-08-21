@@ -7,8 +7,6 @@ var pool: ItemPool
 var defaultPool := preload("res://Resources/Pools/DefaultItemPool.tres")
 var pewPewPowerPool := preload("res://Resources/Pools/PewPewPowerPool.tres")
 
-var magnet_active := false
-
 var pewpewtimer = Timer.new()
 var tealberrytimer = Timer.new()
 
@@ -51,6 +49,7 @@ func on_game_ended():
 func item_got(item_name: String):
 	match item_name:
 		"PewPew":
+			PowerupManager.pewpewactive = true
 			PewPewArea.visible = true
 			$"Spawn Timer".wait_time = 0.50
 			pool = pewPewPowerPool
@@ -62,17 +61,18 @@ func item_got(item_name: String):
 			pewpewtimer.start(5)
 		"Tealberry":
 			TealberryArea.visible = true
-			magnet_active = true
+			PowerupManager.tealberryactive = true
 			tealberrytimer.start(5)
 
 func end_pewpew_time():
+	PowerupManager.pewpewactive = false
 	PewPewArea.visible = false
 	$"Spawn Timer".wait_time = 0.75
 	pool = defaultPool
 	
 func end_tealberry_time():
 	TealberryArea.visible = false
-	magnet_active = false
+	PowerupManager.tealberryactive = false
 	
 func _process(delta):
 	if PewPewArea and TealberryArea:

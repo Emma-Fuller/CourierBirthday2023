@@ -28,7 +28,7 @@ func _physics_process(delta):
 	
 	rotation += delta * rotation_speed * rotate_scale
 	
-	if drop_controller.magnet_active and item_data.score_value > 0:
+	if PowerupManager.tealberryactive and item_data.score_value > 0:
 		var basket: Node2D = get_tree().get_first_node_in_group("basket")
 		if basket and global_position.distance_to(basket.global_position) < 200:
 			global_position = global_position.move_toward(

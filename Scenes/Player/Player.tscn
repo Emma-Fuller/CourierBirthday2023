@@ -1,18 +1,38 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsyutym4unj7t"]
+[gd_scene load_steps=11 format=3 uid="uid://dsyutym4unj7t"]
 
 [ext_resource type="Script" path="res://Scenes/Player/Player.gd" id="1_xu5fr"]
 [ext_resource type="Texture2D" uid="uid://bi80s0ld6whu0" path="res://Sprites/EllieNeutral.png" id="2_7wcg7"]
+[ext_resource type="Texture2D" uid="uid://bbikxkalmd216" path="res://Sprites/EATING_SHIT.png" id="2_lyb5a"]
 [ext_resource type="Texture2D" uid="uid://3ok6dbf31lwd" path="res://Sprites/EllieRun1.png" id="3_a5pmr"]
 [ext_resource type="Texture2D" uid="uid://bb2gdies6dd4q" path="res://Sprites/EllieRun2.png" id="4_v18po"]
+[ext_resource type="Texture2D" uid="uid://cfx82qkmliqbb" path="res://Sprites/ElliewithpewNeutral.png" id="4_w57fv"]
+[ext_resource type="Texture2D" uid="uid://c5c7e2ox06u7n" path="res://Sprites/ElliewithpewRun1.png" id="7_bf1wl"]
+[ext_resource type="Texture2D" uid="uid://bjoe0t2t4yih2" path="res://Sprites/ElliewithpewRun2.png" id="8_uer4y"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1gvd5"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lyb5a")
+}],
+"loop": true,
+"name": &"bonk",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_7wcg7")
 }],
 "loop": true,
 "name": &"neutral",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_w57fv")
+}],
+"loop": true,
+"name": &"neutralpew",
 "speed": 5.0
 }, {
 "frames": [{
@@ -25,6 +45,17 @@ animations = [{
 "loop": true,
 "name": &"walking",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_bf1wl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uer4y")
+}],
+"loop": true,
+"name": &"walkingpew",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pf1bv"]
@@ -36,14 +67,14 @@ speed = 350
 
 [node name="Ellie Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(224, 0)
+position = Vector2(236, -65)
 sprite_frames = SubResource("SpriteFrames_1gvd5")
-animation = &"walking"
+animation = &"walkingpew"
 
 [node name="Collider" type="Area2D" parent="."]
 position = Vector2(224, 0)
 collision_layer = 2
 
 [node name="Collision Shape" type="CollisionShape2D" parent="Collider" groups=["basket"]]
-position = Vector2(-248, -267)
+position = Vector2(-239, -250)
 shape = SubResource("RectangleShape2D_pf1bv")
