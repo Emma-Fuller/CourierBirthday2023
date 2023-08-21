@@ -12,7 +12,7 @@ func _unhandled_input(event):
 		if not event.pressed:
 			touch_vec = null
 		else:
-			var is_left = event.position < get_viewport_rect().size.x / 2
+			var is_left = event.position.x < get_viewport_rect().size.x / 2
 			touch_vec = Vector2(
 				-1 if is_left else 1,
 				0
