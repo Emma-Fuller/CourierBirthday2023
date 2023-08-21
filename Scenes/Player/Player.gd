@@ -5,6 +5,20 @@ var moving = true
 
 var stunned = false
 
+var touch_vec = null
+
+func _unhandled_input(event):
+	if event is InputEventScreenTouch:
+		if not event.pressed:
+			touch_vec = null
+		else:
+			var is_left = event.position < get_viewport_rect().size.x / 2
+			touch_vec = Vector2(
+				-1 if is_left else 1,
+				0
+			)
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if PowerupManager.pewpewactive and $"Ellie Sprite".animation == "walking":
@@ -19,6 +33,8 @@ func _process(delta):
 	if stunned: return
 	
 	var movingVector = Vector2(Input.get_axis("Move Left", "Move Right"), 0)
+	if touch_vec:
+		movingVector = touch_vec
 	
 	if not moving and movingVector.length() != 0:
 		$"Ellie Sprite".play(
