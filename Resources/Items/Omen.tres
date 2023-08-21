@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FallableItem" load_steps=4 format=3 uid="uid://bl6i02he4i3ij"]
+
+[ext_resource type="Script" path="res://Resources/FallableItem.gd" id="1_eicsq"]
+[ext_resource type="AudioStream" uid="uid://djlekipk4vk4s" path="res://Sounds/GoodSound.mp3" id="1_wy5s7"]
+[ext_resource type="Texture2D" uid="uid://dhw7cgolnnlyi" path="res://Sprites/Omen.png" id="3_mfdmu"]
+
+[resource]
+script = ExtResource("1_eicsq")
+name = "Omen"
+score_value = 50
+sprite = ExtResource("3_mfdmu")
+collect_sound = ExtResource("1_wy5s7")

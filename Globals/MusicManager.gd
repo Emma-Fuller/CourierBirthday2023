@@ -5,5 +5,6 @@ func _ready():
 
 func play_song(source: AudioStreamOggVorbis):
 	source.loop = true
+	volume_db -= 20
 	stream = source
 	play()

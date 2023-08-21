@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="FallableItem" load_steps=4 format=3 uid="uid://ba7rrnf8s2hmw"]
 
-[ext_resource type="AudioStream" uid="uid://cbrxnjljq3mrb" path="res://Sounds/GoodSound.ogg" id="1_1jmp2"]
 [ext_resource type="Script" path="res://Resources/FallableItem.gd" id="1_bqtwt"]
+[ext_resource type="AudioStream" uid="uid://djlekipk4vk4s" path="res://Sounds/GoodSound.mp3" id="1_cff1g"]
 [ext_resource type="Texture2D" uid="uid://b8gubxi6w0g6y" path="res://Sprites/SANDWICH.png" id="3_er01c"]
 
 [resource]
 script = ExtResource("1_bqtwt")
 name = "Sammie"
-sprite = ExtResource("3_er01c")
-collect_sound = ExtResource("1_1jmp2")
 score_value = 50
+sprite = ExtResource("3_er01c")
+collect_sound = ExtResource("1_cff1g")

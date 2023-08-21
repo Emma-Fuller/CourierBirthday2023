@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="FallableItem" load_steps=4 format=3 uid="uid://b6m2f1tg23x6s"]
 
 [ext_resource type="Script" path="res://Resources/FallableItem.gd" id="1_e34s1"]
-[ext_resource type="AudioStream" uid="uid://cbrxnjljq3mrb" path="res://Sounds/GoodSound.ogg" id="1_nrndk"]
+[ext_resource type="AudioStream" uid="uid://djlekipk4vk4s" path="res://Sounds/GoodSound.mp3" id="1_ylmk0"]
 [ext_resource type="Texture2D" uid="uid://btlhmvksepfxy" path="res://Sprites/Minty.png" id="3_r4skl"]
 
 [resource]
 script = ExtResource("1_e34s1")
 name = "Minty"
-sprite = ExtResource("3_r4skl")
-collect_sound = ExtResource("1_nrndk")
 score_value = 50
+sprite = ExtResource("3_r4skl")
+collect_sound = ExtResource("1_ylmk0")
